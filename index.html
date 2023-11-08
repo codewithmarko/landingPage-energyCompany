@@ -75,16 +75,18 @@
               responsibility and sustainability.
             </p>
           </div>
-          <div class="row-span-2">
+          <div class="row-span-2 shadow-xl">
             <img
               class="h-full object-cover"
               src="./img/about/windturbines_coast.jpg"
               alt=""
             />
           </div>
-          <div class="flex flex-col items-center bg-aboutSolar bg-no-repeat">
+          <div
+            class="flex flex-col items-center bg-aboutSolar bg-no-repeat shadow-xl"
+          >
             <div
-              class="flex w-fit -translate-y-2/4 place-content-center items-center gap-9 bg-gray-300 px-10 py-3"
+              class="flex w-fit -translate-y-2/4 place-content-center items-center gap-9 bg-gray-300 px-10 py-3 shadow-xl"
             >
               <div class="flex flex-col items-center">
                 <svg
@@ -235,8 +237,8 @@
               </div>
             </div>
           </div>
-          <div class="h-full w-full">
-            <div class="circle-box relative inline-block">
+          <div class="flex h-full w-full items-center justify-center gap-14">
+            <div class="circle-box relative inline-block -translate-y-2/4">
               <svg
                 class="progress-ring -z-10"
                 width="150"
@@ -263,13 +265,15 @@
                 />
               </svg>
               <div
-                class="absolute left-2/4 top-2/4 z-10 flex h-36 w-36 -translate-x-2/4 -translate-y-2/4 flex-col items-center justify-center rounded-full bg-gray-300"
+                class="absolute left-2/4 top-2/4 z-10 flex h-36 w-36 -translate-x-2/4 -translate-y-2/4 flex-col items-center justify-center rounded-full bg-gray-300 shadow-2xl"
               >
-                <p class="">119</p>
-                <p class="">countries</p>
+                <p class="font-semibold">119</p>
+                <p class="font-semibold">countries</p>
               </div>
             </div>
-            <div class="circle-box circle-full relative inline-block">
+            <div
+              class="circle-box circle-full relative inline-block translate-y-2/4"
+            >
               <svg
                 class="progress-ring -z-10"
                 width="150"
@@ -299,16 +303,47 @@
                 />
               </svg>
               <div
-                class="absolute left-2/4 top-2/4 z-10 flex h-36 w-36 -translate-x-2/4 -translate-y-2/4 flex-col items-center justify-center rounded-full bg-gray-300"
+                class="absolute left-2/4 top-2/4 z-10 flex h-36 w-36 -translate-x-2/4 -translate-y-2/4 flex-col items-center justify-center rounded-full bg-gray-300 shadow-2xl"
               >
-                <p class="">10.000</p>
-                <p class="">GWh / day</p>
+                <p class="font-semibold">10.000</p>
+                <p class="font-semibold">GWh / day</p>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <section class="sticky top-0">
+        <div class="h-80 w-full bg-red-500"></div>
+        <div class="textGrowContainer sticky top-0 z-10 h-screen w-full">
+          <p
+            class="textGrow absolute left-2/4 -translate-x-2/4 translate-y-0 bg-textBackground bg-cover bg-clip-text text-center font-bold uppercase text-transparent [font-size:_450px]"
+          >
+            2030
+          </p>
+        </div>
+        <div class="h-80 w-full bg-red-500"></div>
+        <div class="textContainer sticky top-0 flex h-screen border p-16">
+          <div class="sticky top-0 w-3/12 border-r border-black">
+            <h2 class="pt-20">
+              <span class="block text-2xl font-semibold uppercase">by</span>
+              <span
+                class="textEndPosition block text-5xl font-bold uppercase text-blue-900"
+                >2030</span
+              >
+              <span class="block text-2xl font-semibold uppercase"
+                >we will change</span
+              >
+              <span class="block text-2xl font-semibold uppercase"
+                >the world</span
+              >
+            </h2>
+          </div>
+          <div style="height: 2000px" class="block">asdf</div>
+          <div class="h-full0, block bg-red-300">Hier kommt noch Text</div>
+        </div>
+      </section>
     </main>
+    <!-- <section style="height: 2000px">asdf</section> -->
     <footer></footer>
     <script type="module" src="/main.js"></script>
   </body>
