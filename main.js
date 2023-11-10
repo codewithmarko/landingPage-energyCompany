@@ -1,6 +1,8 @@
 import "./index.css";
 
-//Animaton of progress bar
+/**
+ * Animaton of Progress bar
+ */
 
 const circleBox = document.querySelectorAll(".circle-box");
 const circles = document.querySelectorAll(".progress-ring__circle");
@@ -36,29 +38,26 @@ const circleObserver = new IntersectionObserver(function (entries, observer) {
 }, options);
 circleBox.forEach((box) => circleObserver.observe(box));
 
-//Animaton of tex size
+/**
+ * Animation of 2030 Section
+ */
 
 const textContainer = document.querySelector(".textContainer");
 const textGrowContainer = document.querySelector(".textGrowContainer");
 const text = document.querySelector(".textGrow");
-const textEndPosition = document
-  .querySelector(".textEndPosition")
-  .getBoundingClientRect().x;
+const textCurrentPosition = text.getBoundingClientRect();
+const styleFontSize = window
+  .getComputedStyle(text, null)
+  .getPropertyValue("font-size");
 
-const textCurrentPosition = text.getBoundingClientRect().x;
-
-const style = window.getComputedStyle(text, null).getPropertyValue("font-size");
-
-const currentFontSize = parseFloat(style);
+const currentFontSize = parseFloat(styleFontSize);
 const maxFontSize = 450;
-const minFontSize = 48;
-
-//current Progress by intersection observer
 
 let userScrolling = false;
 window.onscroll = () => {
   userScrolling = true;
 };
+
 window.addEventListener("scroll", () => {
   const options = {};
   const progressObserver = new IntersectionObserver(function (
@@ -66,25 +65,58 @@ window.addEventListener("scroll", () => {
     observer,
   ) {
     entries.forEach((entry) => {
+      //Variable declarations
       const containerHeight = entry.boundingClientRect.height;
+      const containerWidth = entry.boundingClientRect.width;
       const currentHeight = entry.boundingClientRect.top;
-      const progress = currentHeight / containerHeight;
-      if (progress >= 0 && progress <= 1 && userScrolling) {
-        console.log(progress.toFixed(3));
+      const currentBottom = entry.boundingClientRect.bottom;
+      const progressAscending = (containerHeight / currentBottom).toFixed(3);
+      const progressDescending = (currentHeight / containerHeight).toFixed(3);
+
+      const textEnd = document.querySelector(".textEndPosition");
+      const textEndPosition = textEnd.getBoundingClientRect();
+      const styleMinFontSize = window
+        .getComputedStyle(textEnd, null)
+        .getPropertyValue("font-size");
+      const minFontSize = parseFloat(styleMinFontSize);
+
+      if (userScrolling && progressDescending >= 0 && progressDescending <= 1) {
         text.style.fontSize = `${Math.max(
           minFontSize,
-          Math.min(maxFontSize, (currentFontSize - 5) * progress.toFixed(3)),
+          Math.min(maxFontSize, (currentFontSize - 5) * progressDescending),
         )}px`;
-        console.log((progress + 0.5) * 100);
-        text.style.transform = `translateX(${-(-progress + 0.5) * 100}%)`;
-        console.log(textCurrentPosition);
       }
 
-      if (progress <= 0.02) {
-        textGrowContainer.style.opacity = "0";
-      } else {
-        textGrowContainer.style.opacity = "1";
+      if (textEndPosition.y <= containerHeight) {
+        text.style.transform = ` translateX(${
+          textCurrentPosition.left / -(textEndPosition.y / containerHeight) +
+          textCurrentPosition.left
+        }px)`;
       }
+
+      // if ((textEndPosition.y / containerHeight).toFixed(2) <= 0.5) {
+      //   text.style.transform = ` translate(${
+      //     textCurrentPosition.left / -(textEndPosition.y / containerHeight) +
+      //     textCurrentPosition.left
+      //   }px,
+      //    ${
+      //      textCurrentPosition.y / -(textEndPosition.y / containerHeight) +
+      //      textCurrentPosition.top
+      //    }%)`;
+      // }
+
+      //! Das ist für später wenn die Animation stimmt
+
+      // if (progressDescending <= 0.01) {
+      //   textGrowContainer.classList.remove("bg-white");
+      //   text.style.visibility = "hidden";
+      // }
+
+      // if (progressDescending <= 0.02) {
+      //   textGrowContainer.style.opacity = "0";
+      // } else {
+      //   textGrowContainer.style.opacity = "1";
+      // }
     });
   }, options);
   progressObserver.observe(textContainer);

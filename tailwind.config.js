@@ -9,7 +9,7 @@ export default {
       backgroundImage: {
         hero: "url('/img/hero.jpg')",
         aboutSolar: "url(/img/about/solarpanel.jpg)",
-        textBackground: "url(/img/wind turbines.jpg)",
+        textBackground: "url(/img/windTurbines.jpg)",
       },
     },
   },
