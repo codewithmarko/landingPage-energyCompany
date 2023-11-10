@@ -1,4 +1,7 @@
 import "./index.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Animaton of Progress bar
@@ -42,96 +45,78 @@ circleBox.forEach((box) => circleObserver.observe(box));
  * Animation of 2030 Section
  */
 
-const textContainer = document.querySelector(".textContainer");
-const textGrowContainer = document.querySelector(".textGrowContainer");
+const textContainerEnd = document.querySelector(".textContainerEnd");
+const textContainerStart = document.querySelector(".textContainerStart");
+
 //Big Text
-const text = document.querySelector(".textGrow");
+const text = document.querySelector(".textStart");
 const styleFontSize = window
   .getComputedStyle(text, null)
   .getPropertyValue("font-size");
 const currentFontSize = parseFloat(styleFontSize);
+// const textPosition = text.getBoundingClientRect();
 //EndPosition Text
-const textEnd = document.querySelector(".textEndPosition");
+const textEnd = document.querySelector(".textEnd");
 const styleMinFontSize = window
   .getComputedStyle(textEnd, null)
   .getPropertyValue("font-size");
 const minFontSize = parseFloat(styleMinFontSize);
+// const textEndPosition = textEnd.getBoundingClientRect();
+//
+const textEndPosition = textEnd.getBoundingClientRect();
 const maxFontSize = 450;
 
-let userScrolling = false;
-window.onscroll = () => {
-  userScrolling = true;
-};
+// gsap.to(".textStart", {
+//   duration: 2,
+//   x: textEndPosition.x,
+//   y: textEndPosition.y,
+// });
 
-window.addEventListener("scroll", () => {
-  const options = {};
-  const progressObserver = new IntersectionObserver(function (
-    entries,
-    observer,
-  ) {
-    entries.forEach((entry) => {
-      //Variable declarations
-      const containerHeight = entry.boundingClientRect.height;
-      const containerWidth = entry.boundingClientRect.width;
-      const currentHeight = entry.boundingClientRect.top;
-      const currentBottom = entry.boundingClientRect.bottom;
-      //Aufsteigend
-      const progressAscending =
-        1 - (currentHeight / containerHeight).toFixed(3);
-      //Absteigend
-      const progressDescending = (currentHeight / containerHeight).toFixed(3);
-      const halfContainerHeight = containerHeight / 2;
-      const halfContainerWidth = containerWidth / 2;
-      const textCurrentPosition = text.getBoundingClientRect();
-      console.log(textCurrentPosition);
-      const textEndPosition = textEnd.getBoundingClientRect();
-      const textEndPostionYScrollPercentage =
-        textEndPosition.top / containerHeight;
+ScrollTrigger.create({
+  trigger: ".textContainerEnd",
+  start: "top bottom",
+  end: "top top",
+  // scrub: true,
+  markers: true,
+  onUpdate: (self) => {
+    text.style.fontSize = `${Math.max(
+      minFontSize,
+      Math.min(maxFontSize, currentFontSize * (1 - self.progress)),
+    )}px`;
+    const textPosition = text.getBoundingClientRect();
+    const textEndPosition = textEnd.getBoundingClientRect();
 
-      console.log(textEndPostionYScrollPercentage);
+    console.log(textPosition.top);
+    console.log(textEndPosition.top);
 
-      if (textEndPostionYScrollPercentage <= 0.5) {
-        textCurrentPosition.x = textEndPosition.x * progressAscending;
-        textCurrentPosition.y = textEndPosition.y * progressAscending;
-      }
+    // console.log("X Werte");
+    // console.log(textPosition.left + window.scrollX);
+    // console.log(textEndPosition.left + window.scrollX);
 
-      if (userScrolling && progressDescending >= 0 && progressDescending <= 1) {
-        text.style.fontSize = `${Math.max(
-          minFontSize,
-          Math.min(maxFontSize, (currentFontSize - 5) * progressDescending),
-        )}px`;
-      }
+    // gsap.to(".textContainerStart", {
+    //   opacity: self.progress <= 0.99 ? 1 : 0,
+    //   duration: 0.3,
+    // });
 
-      // if (userScrolling && progressAscending <= 1 && progressAscending >= 0) {
-      //   text.style.transform = ` translateX(${
-      //     textCurrentPosition.left - halfContainerWidth * progressAscending
-      //   }px)`;
-      // }
+    // 650 - (650 - 65) * 0.1;
 
-      //! Das ist für später wenn die Animation stimmt
+    // console.log(
+    //   textPosition.x - (textPosition.x - textEndPosition.x) * self.progress,
+    // );
 
-      // if (progressDescending <= 0.01) {
-      //   textGrowContainer.classList.remove("bg-white");
-      //   text.style.visibility = "hidden";
-      // }
+    //X:- 605 Y: -172 ist die Lösung
 
-      // if (progressDescending <= 0.02) {
-      //   textGrowContainer.style.opacity = "0";
-      // } else {
-      //   textGrowContainer.style.opacity = "1";
-      // }
-    });
-  }, options);
-  progressObserver.observe(textContainer);
+    if (self.progress >= 0.9) {
+      gsap.to(".textStart", {
+        // x:
+        //   textPosition.left -
+        //   (textPosition.left - textEndPosition.left) * self.progress,
+
+        y: -textEndPosition.top,
+      });
+    }
+  },
 });
-
-// Hier brauche ich noch eine Variable welche die momentanten pixel ausgibt und dann kann ich progress berechnen
-
-//Sektion bleibt picken
-//2023 bleibt picken
-//während 2023 klein hinein scrollt wird 2023 groß kleiner
-//hier ein div mit 2-300 pixel einfügen damit es mehr zeit verschaft oder mit observer spielen
-//2023 klein bleibt picken
 
 // if (userScrolling && textEndPosition.y <= containerHeight) {
 //   text.style.transform = ` translateX(${
@@ -139,6 +124,8 @@ window.addEventListener("scroll", () => {
 //     textCurrentPosition.left
 //   }px)`;
 // }
+
+// currentX - (DiffEndXCurrentX * progress)
 
 // if (userScrolling) {
 //   text.style.transform = `translateX(${
