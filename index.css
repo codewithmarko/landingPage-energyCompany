@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  box-sizing: border-box;
 }
 
 .progress-ring {

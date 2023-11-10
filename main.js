@@ -66,12 +66,6 @@ const minFontSize = parseFloat(styleMinFontSize);
 const textEndPosition = textEnd.getBoundingClientRect();
 const maxFontSize = 450;
 
-// gsap.to(".textStart", {
-//   duration: 2,
-//   x: textEndPosition.x,
-//   y: textEndPosition.y,
-// });
-
 ScrollTrigger.create({
   trigger: ".textContainerEnd",
   start: "top bottom",
@@ -86,35 +80,38 @@ ScrollTrigger.create({
     const textPosition = text.getBoundingClientRect();
     const textEndPosition = textEnd.getBoundingClientRect();
 
-    console.log(textPosition.top);
-    console.log(textEndPosition.top);
-
-    // console.log("X Werte");
-    // console.log(textPosition.left + window.scrollX);
-    // console.log(textEndPosition.left + window.scrollX);
-
-    // gsap.to(".textContainerStart", {
-    //   opacity: self.progress <= 0.99 ? 1 : 0,
-    //   duration: 0.3,
-    // });
-
-    // 650 - (650 - 65) * 0.1;
-
-    // console.log(
-    //   textPosition.x - (textPosition.x - textEndPosition.x) * self.progress,
-    // );
-
-    //X:- 605 Y: -172 ist die Lösung
-
-    if (self.progress >= 0.9) {
+    let backwards = false;
+    if (self.progress >= 0.85) {
+      backwards = true;
       gsap.to(".textStart", {
-        // x:
-        //   textPosition.left -
-        //   (textPosition.left - textEndPosition.left) * self.progress,
-
-        y: -textEndPosition.top,
+        left: textEndPosition.left,
+        top: textEndPosition.top,
+        x: 0,
+        y: 0,
       });
     }
+    if (self.progress <= 0.85 && backwards) {
+      gsap.fromTo(
+        ".textStart",
+        {
+          left: textEndPosition.left,
+          top: textEndPosition.top,
+          x: 0,
+          y: 0,
+        },
+        {
+          left: "50%",
+          top: "50%",
+          x: "-50%",
+          y: "-50%",
+        },
+      );
+    }
+
+    gsap.to(".textContainerStart", {
+      opacity: self.progress <= 0.99 ? 1 : 0,
+      duration: 0.3,
+    });
   },
 });
 
