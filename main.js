@@ -47,7 +47,7 @@ circleBox.forEach((box) => circleObserver.observe(box));
 
 const textContainerEnd = document.querySelector(".textContainerEnd");
 const textContainerStart = document.querySelector(".textContainerStart");
-
+const textContainerStartPosition = textContainerStart.getBoundingClientRect();
 //Big Text
 const text = document.querySelector(".textStart");
 const styleFontSize = window
@@ -63,49 +63,45 @@ const styleMinFontSize = window
 const minFontSize = parseFloat(styleMinFontSize);
 // const textEndPosition = textEnd.getBoundingClientRect();
 //
-const textEndPosition = textEnd.getBoundingClientRect();
 const maxFontSize = 450;
 
+const textInitPosition = text.getBoundingClientRect();
+
 ScrollTrigger.create({
-  trigger: ".textContainerEnd",
-  start: "top bottom",
-  end: "top top",
-  // scrub: true,
+  trigger: ".textContainerStart",
+  start: "top top",
+  end: "bottom top",
+  scrub: true,
   markers: true,
   onUpdate: (self) => {
+    let tl = gsap.timeline();
     text.style.fontSize = `${Math.max(
       minFontSize,
       Math.min(maxFontSize, currentFontSize * (1 - self.progress)),
     )}px`;
+
     const textPosition = text.getBoundingClientRect();
     const textEndPosition = textEnd.getBoundingClientRect();
 
-    let backwards = false;
-    if (self.progress >= 0.85) {
-      backwards = true;
-      gsap.to(".textStart", {
-        left: textEndPosition.left,
-        top: textEndPosition.top,
-        x: 0,
-        y: 0,
+    const textEndPositionCenterY =
+      (textEndPosition.top + textEndPosition.bottom) / 2;
+    const textEndPositionCenterX =
+      (textEndPosition.left + textEndPosition.right) / 2;
+
+    if (self.progress >= 0.8 && self.direction == 1) {
+      tl.to(".textStart", {
+        left: textEndPositionCenterX,
+        top: textEndPositionCenterY,
       });
     }
-    if (self.progress <= 0.85 && backwards) {
-      gsap.fromTo(
-        ".textStart",
-        {
-          left: textEndPosition.left,
-          top: textEndPosition.top,
-          x: 0,
-          y: 0,
-        },
-        {
-          left: "50%",
-          top: "50%",
-          x: "-50%",
-          y: "-50%",
-        },
-      );
+
+    if (self.direction == -1) {
+      tl.to(".textStart", {
+        left: "50%",
+        top: "50%",
+        xPercent: -50,
+        yPercent: -50,
+      });
     }
 
     gsap.to(".textContainerStart", {
@@ -115,17 +111,15 @@ ScrollTrigger.create({
   },
 });
 
-// if (userScrolling && textEndPosition.y <= containerHeight) {
-//   text.style.transform = ` translateX(${
-//     textCurrentPosition.left / -(textEndPosition.y / containerHeight) +
-//     textCurrentPosition.left
-//   }px)`;
-// }
+// console.log("END X");
+// console.log(textEndPositionCenterX);
+// console.log("START X");
+// console.log(textPositionCenterX);
+// console.log("END Y");
+// console.log(textEndPositionCenterY);
+// console.log("START Y");
+// console.log(textPositionCenterY);
 
-// currentX - (DiffEndXCurrentX * progress)
-
-// if (userScrolling) {
-//   text.style.transform = `translateX(${
-//     (textCurrentPosition.left * textEndPosition.y) / containerHeight
-//   }px)`;
-// }
+// console.log(textPosition.top);
+// const textPositionCenterY = (textPosition.top + textPosition.bottom) / 2;
+// const textPositionCenterX = (textPosition.left + textPosition.right) / 2;
