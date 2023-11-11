@@ -5,7 +5,8 @@
 body {
 }
 
-.progress-ring {
+.largeText {
+  font-size: 450px;
 }
 
 .progress-ring__circle {
