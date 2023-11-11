@@ -72,7 +72,7 @@ ScrollTrigger.create({
   start: "top top",
   end: "bottom top",
   scrub: true,
-  markers: true,
+  markers: false,
   onUpdate: (self) => {
     let tl = gsap.timeline();
     text.style.fontSize = `${Math.max(
