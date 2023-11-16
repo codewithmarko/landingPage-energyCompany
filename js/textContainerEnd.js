@@ -18,6 +18,12 @@ const minFontSize = parseFloat(styleMinFontSize);
 
 const maxFontSize = 450;
 const textInitPosition = text.getBoundingClientRect();
+
+//! Activate this for production
+// window.onbeforeunload = function () {
+//   window.scrollTo(0, 0);
+// };
+
 ScrollTrigger.create({
   trigger: ".textContainerStart",
   start: "top top",
@@ -26,12 +32,13 @@ ScrollTrigger.create({
   markers: false,
   onUpdate: (self) => {
     let tl = gsap.timeline();
-    text.style.fontSize = `${Math.max(
+    const currFontStyle = (text.style.fontSize = `${Math.max(
       minFontSize,
       Math.min(maxFontSize, currentFontSize * (1 - self.progress)),
-    )}px`;
+    )}px`);
 
-    // const textPosition = text.getBoundingClientRect();
+    const currFont = parseFloat(currFontStyle);
+    const textPosition = text.getBoundingClientRect();
     const textEndPosition = textEnd.getBoundingClientRect();
 
     const textEndPositionCenterY =
@@ -39,7 +46,7 @@ ScrollTrigger.create({
     const textEndPositionCenterX =
       (textEndPosition.left + textEndPosition.right) / 2;
 
-    if (self.progress >= 0.8 && self.direction == 1) {
+    if (currFont <= minFontSize * 2 && self.direction == 1) {
       tl.to(".textStart", {
         left: textEndPositionCenterX,
         top: textEndPositionCenterY,
@@ -53,11 +60,21 @@ ScrollTrigger.create({
         xPercent: -50,
         yPercent: -50,
       });
+      gsap.to(".textContainerStart", {
+        opacity: self.progress <= 0.99 ? 1 : 0,
+        duration: 0.5,
+        position: self.progress >= 1 ? "relative" : "sticky",
+      });
     }
 
-    gsap.to(".textContainerStart", {
-      opacity: self.progress <= 0.99 ? 1 : 0,
-      duration: 0.3,
-    });
+    if (textPosition.y > textEndPosition.y) {
+      gsap.to(".textContainerStart", {
+        opacity: self.progress <= 0.99 ? 1 : 0,
+        duration: 0.5,
+        position: self.progress >= 1 ? "relative" : "sticky",
+      });
+    }
   },
 });
+
+//Bug muss bei Resize auch gelöst werden.

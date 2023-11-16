@@ -2,11 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
+  cursor:
+    url("./img/cursor/sustainability.png") 12 4,
+    auto;
 }
 
-.progress-ring {
+body {
+  box-sizing: border-box;
+  cursor: inherit;
+}
+
+.textContainerStart {
+  pointer-events: none;
 }
 
 .progress-ring__circle {
