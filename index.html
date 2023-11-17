@@ -13,6 +13,7 @@
       rel="stylesheet"
     />
     <!-- Font -->
+    <script defer type="module" src="/main.js"></script>
     <title>NexaGreen</title>
   </head>
   <body>
@@ -40,10 +41,14 @@
         </nav>
         <div class="gap -mt-32 flex flex-col gap-12">
           <h1
-            class="text-4xl uppercase text-white [text-shadow:_0_4px_4px_rgb(0_0_0_/_25%)]"
+            class="text-5xl font-bold text-gray-100 [text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)]"
           >
             <span class="block"> We are shaping the future</span>
-            <span> with sustainable energy solutions.</span>
+            <span>
+              with
+
+              <span class="text-blue-900"> sustainable energy solutions.</span>
+            </span>
           </h1>
           <a
             href="#"
@@ -62,20 +67,20 @@
     </header>
     <main>
       <section class="about">
-        <div class="grid h-screen grid-cols-3 grid-rows-2">
-          <div class="col-span-2 mt-12 p-16">
+        <div class="grid h-screen grid-cols-6 grid-rows-2">
+          <div class="col-span-3 mt-12 h-2/4 p-16">
             <h2 class="text-2xl font-bold uppercase leading-tight">
               <span class="block">It is our responsibility to create</span>
               <span class="block">an uncompromising future.</span>
             </h2>
-            <p class="my-8 w-10/12">
-              EcoTech Innovations, founded in 2020, is driving eco-friendly
+            <p class="my-8 w-8/12">
+              NEXG Innovations, founded in 2020, is driving eco-friendly
               innovations. Our aim is a sustainable future through
               energy-efficient technologies. Our products and services promote
               responsibility and sustainability.
             </p>
           </div>
-          <div class="row-span-2 shadow-xl">
+          <div class="col-span-1 row-span-2 shadow-xl">
             <img
               class="h-full object-cover"
               src="./img/about/windturbines_coast.jpg"
@@ -83,10 +88,10 @@
             />
           </div>
           <div
-            class="flex flex-col items-center bg-aboutSolar bg-no-repeat shadow-xl"
+            class="col-span-3 flex h-4/6 flex-col items-center self-end bg-aboutSolar bg-cover bg-no-repeat shadow-xl"
           >
             <div
-              class="flex w-fit -translate-y-2/4 place-content-center items-center gap-9 rounded-sm bg-gray-300 px-10 py-3 shadow-xl"
+              class="flex w-fit -translate-y-2/4 place-content-center items-center gap-9 rounded-sm bg-gray-300 px-10 py-6 shadow-xl"
             >
               <div class="flex flex-col items-center">
                 <svg
@@ -237,7 +242,9 @@
               </div>
             </div>
           </div>
-          <div class="flex h-full w-full items-center justify-center gap-14">
+          <div
+            class="col-span-2 flex h-full w-full items-center justify-center gap-14 bg-red-50"
+          >
             <div class="circle-box relative inline-block -translate-y-2/4">
               <svg
                 class="progress-ring -z-10"
@@ -267,8 +274,12 @@
               <div
                 class="absolute left-2/4 top-2/4 z-10 flex h-36 w-36 -translate-x-2/4 -translate-y-2/4 flex-col items-center justify-center rounded-full bg-gray-300 shadow-2xl"
               >
-                <p class="font-semibold">119</p>
-                <p class="font-semibold">countries</p>
+                <p class="text-center">
+                  <span class="leading-1 block text-xl font-semibold">
+                    119
+                  </span>
+                  <span class="leading-1 text-base uppercase">countries</span>
+                </p>
               </div>
             </div>
             <div
@@ -305,8 +316,12 @@
               <div
                 class="absolute left-2/4 top-2/4 z-10 flex h-36 w-36 -translate-x-2/4 -translate-y-2/4 flex-col items-center justify-center rounded-full bg-gray-300 shadow-2xl"
               >
-                <p class="font-semibold">10.000</p>
-                <p class="font-semibold">GWh / day</p>
+                <p class="text-center">
+                  <span class="leading-1 block text-xl font-semibold">
+                    10.000
+                  </span>
+                  <span class="leading-1 text-base uppercase">GWh / day</span>
+                </p>
               </div>
             </div>
           </div>
@@ -763,6 +778,5 @@
     </main>
 
     <footer></footer>
-    <script type="module" src="/main.js"></script>
   </body>
 </html>
