@@ -1,8 +1,8 @@
 /**
  * Animaton of Progress bar
  */
-export const circleBox = document.querySelectorAll(".circle-box");
-const circles = document.querySelectorAll(".progress-ring__circle");
+export const circleBox = document.querySelectorAll('.progress-ring__container');
+const circles = document.querySelectorAll('.progress-ring__circle');
 export function animateCircle(percent) {
   circles.forEach((circle) => {
     const radius = circle.r.baseVal.value;
@@ -16,7 +16,7 @@ export function animateCircle(percent) {
       circle.style.strokeDashoffset = offset;
     }
 
-    if (circle.classList.contains("full")) {
+    if (circle.classList.contains('full')) {
       setProgress(100);
     } else {
       setProgress(percent);
@@ -24,7 +24,7 @@ export function animateCircle(percent) {
   });
 }
 
-const options = { threshold: "0.8" };
+const options = { threshold: '0.8' };
 const circleObserver = new IntersectionObserver(function (entries, observer) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {

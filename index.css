@@ -1,9 +1,3 @@
 .textContainerStart {
   pointer-events: none;
 }
-
-.progress-ring__circle {
-  transition: stroke-dashoffset 2s;
-  transform-origin: 50% 50%;
-  transform: rotate(-90deg);
-}

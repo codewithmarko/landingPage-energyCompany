@@ -183,6 +183,10 @@ html {
 }
 
 body {
+  background-color: #f9f9f9;
+}
+
+body {
   font-family: "Lexend", sans-serif;
 }
 
@@ -193,6 +197,22 @@ body {
 p {
   line-height: 1.4;
   font-weight: 300;
+}
+
+.paragraph--white {
+  color: #f9f9f9;
+}
+.paragraph--gray {
+  color: #dedee4;
+}
+.paragraph--primary {
+  color: #00488b;
+}
+.paragraph--bold {
+  font-weight: 700;
+}
+.paragraph--semibold {
+  font-weight: 500;
 }
 
 .paragraph--block {
@@ -222,7 +242,7 @@ p {
   letter-spacing: 1.4rem;
   font-size: clamp(3.1575rem, 2.9996rem + 0.7894vw, 3.9469rem);
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
 }
 .heading--h1 {
   letter-spacing: 0.1rem;
@@ -233,7 +253,7 @@ p {
 }
 .heading--h2 {
   line-height: 0.85;
-  margin-block-end: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
+  margin-block-end: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
 }
 
 .btn {
@@ -340,6 +360,8 @@ p {
 .about__imgbox-big {
   grid-column: 10/-1;
   grid-row: 1/3;
+  border-left: 2px solid #00488b;
+  background-color: #00488b;
 }
 .about__imgbox-small {
   grid-row: 2/3;
@@ -348,17 +370,23 @@ p {
   display: flex;
   align-self: end;
 }
-
 .about__img-big {
   object-fit: cover;
   height: 100%;
   width: auto;
 }
-
 .about__img-small {
   height: 80%;
   background-size: cover;
   background-image: url(./img/about/solarpanel.jpg);
+}
+.about__progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  grid-column: 6/10;
+  grid-row: 2/3;
 }
 
 .energyinfo__container {
@@ -368,7 +396,7 @@ p {
   gap: clamp(3rem, 2.85rem + 0.75vw, 3.75rem);
   justify-content: space-around;
   background-color: #dedee4;
-  width: 90%;
+  width: 95%;
   position: absolute;
   top: 0;
   left: 50%;
@@ -382,6 +410,47 @@ p {
   gap: clamp(0.25rem, 0.2375rem + 0.0625vw, 0.3125rem);
   justify-content: space-between;
   white-space: nowrap;
+}
+
+.progress-ring {
+  z-index: -10;
+  width: clamp(8rem, 7.6rem + 2vw, 10rem);
+  height: clamp(8rem, 7.6rem + 2vw, 10rem);
+  fill: #dedee4;
+  stroke: #00488b;
+  stroke-width: 4px;
+}
+.progress-ring__container {
+  position: relative;
+  display: inline-block;
+}
+.progress-ring__container:first-child {
+  transform: translate(40%, 50%);
+}
+.progress-ring__container:nth-child(2) {
+  transform: translateY(-50%);
+}
+.progress-ring__container:last-child {
+  transform: translate(-40%, 50%);
+}
+.progress-ring__circle {
+  transition: stroke-dashoffset 2s;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+  stroke-width: 4px;
+  fill: none;
+  stroke: #f9f9f9;
+}
+.progress-ring__text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.progress-ring__text--main {
+  color: #00488b;
+  font-size: clamp(1.3331rem, 1.2665rem + 0.3331vw, 1.6663rem);
 }
 
 /*# sourceMappingURL=style.css.map */

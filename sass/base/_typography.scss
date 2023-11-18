@@ -7,6 +7,26 @@ p {
   font-weight: 300;
 }
 
+.paragraph {
+  &--white {
+    color: $c-white;
+  }
+
+  &--gray {
+    color: $c-gray;
+  }
+
+  &--primary {
+    color: $c-primary;
+  }
+  &--bold {
+    font-weight: 700;
+  }
+  &--semibold {
+    font-weight: 500;
+  }
+}
+
 .paragraph--block {
   text-align: justify;
 }
@@ -39,7 +59,7 @@ p {
     font-size: $fs-2xl;
     text-transform: uppercase;
 
-    font-weight: 600;
+    font-weight: 700;
   }
 
   &--h1 {
@@ -52,6 +72,6 @@ p {
 
   &--h2 {
     line-height: 0.85;
-    margin-block-end: $space-md;
+    margin-block-end: $space-base;
   }
 }
