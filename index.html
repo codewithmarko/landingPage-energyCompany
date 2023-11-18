@@ -18,85 +18,63 @@
   </head>
   <body>
     <header>
-      <div
-        class="flex h-screen w-full flex-col justify-between bg-hero bg-cover bg-center p-16"
-      >
-        <nav class="flex items-center justify-between">
-          <p
-            class="text-3xl text-white [text-shadow:_0_4px_4px_rgb(0_0_0_/_25%)]"
-          >
-            NexaGreen X
-          </p>
-          <div class="group flex cursor-pointer flex-col gap-1">
-            <span
-              class="inline-block h-1.5 w-10 rounded-sm border bg-white shadow-sm transition-colors duration-300 group-hover:bg-blue-900"
-            ></span>
-            <span
-              class="inline-block h-1.5 w-10 rounded-sm border bg-white shadow-sm transition-colors duration-300 group-hover:bg-blue-900"
-            ></span>
-            <span
-              class="inline-block h-1.5 w-10 rounded-sm border bg-white shadow-sm transition-colors duration-300 group-hover:bg-blue-900"
-            ></span>
+      <div class="container hero">
+        <nav class="navbar">
+          <p class="logo">NexaGreen X</p>
+          <div class="hb__container">
+            <span class="hb__line"></span>
+            <span class="hb__line"></span>
+            <span class="hb__line"></span>
           </div>
         </nav>
-        <div class="gap -mt-32 flex flex-col gap-12">
-          <h1
-            class="text-5xl font-bold text-gray-100 [text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)]"
-          >
-            <span class="block"> We are shaping the future</span>
-            <span>
-              with
-
-              <span class="text-blue-900"> sustainable energy solutions.</span>
-            </span>
+        <div class="hero__main">
+          <h1 class="heading heading--h1">
+            <span class="heading--white block">We are shaping the future </span>
+            <span class="heading--white">with </span>
+            <span class="">sustainable energy solutions </span>
           </h1>
-          <a
-            href="#"
-            class="w-fit rounded-sm bg-blue-900 px-10 py-2 uppercase text-white shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-            >Learn more</a
-          >
+          <a href="#" class="btn btn--primary">Learn more</a>
         </div>
-        <div class="flex items-center">
-          <span class="inline-block h-0.5 w-1/12 bg-white"></span>
-          <p class="mx-8 whitespace-nowrap font-light text-white">
-            Solara - WindStream - AquaPure
-          </p>
-          <span class="inline-block h-0.5 w-10/12 bg-white"></span>
+        <div class="hero__sub flex items-center">
+          <span class="hero__sub-line hero__sub-line--short"></span>
+          <p class="hero__sub-solutions">Solara - WindStream - AquaPure</p>
+          <span class="hero__sub-line hero__sub-line--long"></span>
         </div>
       </div>
     </header>
     <main>
       <section class="about">
-        <div class="grid h-screen grid-cols-6 grid-rows-2">
-          <div class="col-span-3 mt-12 h-2/4 p-16">
-            <h2 class="text-2xl font-bold uppercase leading-tight">
-              <span class="block">It is our responsibility to create</span>
-              <span class="block">an uncompromising future.</span>
+        <div class="about__container">
+          <div class="about__main container">
+            <h2 class="heading heading--h2">
+              <span class="heading--upper block">
+                creating an
+                <span class="uppercase"> uncompromising </span>
+              </span>
+              <span class="heading--lower">future</span>
             </h2>
-            <p class="my-8 w-8/12">
-              NEXG Innovations, founded in 2020, is driving eco-friendly
-              innovations. Our aim is a sustainable future through
-              energy-efficient technologies. Our products and services promote
-              responsibility and sustainability.
+            <p class="paragraph--block">
+              We are founded in 2020, and are driving eco-friendly innovations.
+              Our aim is a sustainable future through energy-efficient
+              technologies. Our products and services promote responsibility and
+              sustainability.
             </p>
           </div>
-          <div class="col-span-1 row-span-2 shadow-xl">
+          <div class="about__imgbox-big">
             <img
-              class="h-full object-cover"
+              class="about__img-big"
               src="./img/about/windturbines_coast.jpg"
-              alt=""
+              alt="Windturbines on the coast."
             />
           </div>
-          <div
-            class="col-span-3 flex h-4/6 flex-col items-center self-end bg-aboutSolar bg-cover bg-no-repeat shadow-xl"
-          >
+          <div class="about__imgbox-small about__img-small">
             <div
-              class="flex w-fit -translate-y-2/4 place-content-center items-center gap-9 rounded-sm bg-gray-300 px-10 py-6 shadow-xl"
+              class="energyinfo__container flex w-fit -translate-y-2/4 place-content-center items-center gap-9 rounded-sm bg-gray-300 px-10 py-6 shadow-xl"
             >
-              <div class="flex flex-col items-center">
+              <div class="energyinfo__power flex flex-col items-center">
                 <svg
-                  width="56"
-                  height="56"
+                  width="50"
+                  height="50"
                   viewBox="0 0 56 56"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -182,10 +160,10 @@
                 </svg>
                 <p>solar power</p>
               </div>
-              <div class="flex flex-col items-center">
+              <div class="energyinfo__power flex flex-col items-center">
                 <svg
                   width="31"
-                  height="56"
+                  height="50"
                   viewBox="0 0 31 56"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -217,28 +195,29 @@
                 </svg>
                 <p class="">wind power</p>
               </div>
-              <div class="flex h-full flex-col justify-end">
+              <div class="energyinfo__power flex h-full flex-col justify-end">
                 <svg
-                  width="95"
-                  height="19"
-                  viewBox="0 0 95 19"
+                  width="97"
+                  height="50"
+                  viewBox="0 0 97 38"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M42.3267 5.50721C38.6139 4.43251 34.1584 0.87655 21.8529 7.80131C10.0778 16.5914 3.81895 13.9531 0 13.0354C1.80339 12.0031 6.15276 15.3296 19.9434 5.50718C32.9915 -3.32516 40.7355 3.17068 42.3267 5.50721Z"
+                    d="M43.3267 16.7966C39.6139 16.1056 35.1584 13.8194 22.8529 18.2715C11.0778 23.9229 4.81895 22.2267 1 21.6367C2.80339 20.973 7.15276 23.1116 20.9434 16.7966C33.9915 11.118 41.7355 15.2944 43.3267 16.7966Z"
                     fill="black"
                   />
                   <path
-                    d="M95 7.52552C91.2871 6.45082 86.8317 2.89486 74.5262 9.81963C62.7511 18.6097 56.4922 15.9714 52.6733 15.0538C54.4767 14.0214 58.826 17.3479 72.6167 7.52549C85.6648 -1.30685 93.4088 5.18899 95 7.52552Z"
+                    d="M96 18.0942C92.2871 17.4032 87.8317 15.117 75.5262 19.5691C63.7511 25.2205 57.4922 23.5243 53.6733 22.9343C55.4767 22.2706 59.826 24.4093 73.6167 18.0942C86.6648 12.4156 94.4088 16.592 96 18.0942Z"
                     fill="black"
                   />
                   <path
-                    d="M71.4851 6.57407C66.9472 5.00336 61.6089 0.504587 46.4616 9.927C31.5099 22.2018 24.4201 18.9181 19.7525 17.5769C21.9566 16.0681 27.2725 20.9299 44.1278 6.57403C60.0754 -6.33478 69.5403 3.15915 71.4851 6.57407Z"
+                    d="M72.4851 17.4825C67.9472 16.4727 62.6089 13.5803 47.4616 19.6382C32.5099 27.53 25.4201 25.4188 20.7525 24.5565C22.9566 23.5864 28.2725 26.7122 45.1278 17.4825C61.0754 9.18306 70.5403 15.287 72.4851 17.4825Z"
                     fill="black"
                   />
                 </svg>
-                <p class="mt-3">hydro power</p>
+
+                <p class="energyinfo__power mt-3">hydro power</p>
               </div>
             </div>
           </div>

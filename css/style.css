@@ -1,0 +1,387 @@
+@charset "UTF-8";
+/*
+Min VP: 320px, 16px, 1.33
+MaxVP: 1920px, 20px, 1.33
+*/
+/* Space 5xs: 2px → 2px */
+/* Space 4xs: 3px → 4px */
+/* Space 3xs: 4px → 5px */
+/* Space 2xs: 8px → 10px */
+/* Space xs: 12px → 15px */
+/* Space s: 16px → 20px */
+/* Space m: 24px → 30px */
+/* Space lg: 32px → 40px */
+/* Space xl: 48px → 60px */
+/* Space 2xl: 64px → 80px */
+/* Space 3xl: 96px → 120px */
+/* Space 4xl: 112px → 140px */
+/* Space 5xl: 128px → 160px */
+/* Space 6xl: 144px → 180px */
+/* Space 7xl: 160px → 200px */
+/* One-up pairs */
+/* Space 2xs-xs: 8px → 15px */
+/* Space xs-s: 12px → 20px */
+/* Space s-m: 16px → 30px */
+/* Space m-lg: 24px → 40px */
+/* Space lg-xl: 32px → 60px */
+/* Space xl-2xl: 48px → 80px */
+/* Space 2xl-3xl: 64px → 120px */
+/* Space 3xl-4xl: 96px → 140px */
+/* Space 4xl-5xl: 112px → 160px */
+/* Space 5xl-6xl: 128px → 180px */
+/* Space 6xl-7xl: 144px → 200px */
+/**
+/** Font Size
+/**
+Min VP: 320px, 16px, 1.33
+MaxVP: 1920px, 20px, 1.33
+*/
+/* Step -3: 6.76px → 8.44px */
+/* Step -2: 9.00px → 11.26px */
+/* Step -1: 12.00px → 15.00px */
+/* Step 0: 16.00px → 20.00px */
+/* Step 1: 21.33px → 26.66px */
+/* Step 2: 28.43px → 35.54px */
+/* Step 3: 37.90px → 47.37px */
+/* Step 4: 50.52px → 63.15px */
+/* Step 5: 67.34px → 84.17px */
+/* Step 6: 89.76px → 112.20px */
+/**
+/** Colors
+/**/
+/**
+/** Border Radius
+/**/
+.container {
+  padding: clamp(4rem, 3.8rem + 1vw, 5rem);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.block {
+  display: block;
+}
+
+/***
+    The new CSS reset - version 1.11.2 (last updated 15.11.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Fix mobile Safari increase font-size on landscape mode */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu,
+summary {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly.
+ - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+/* Remove details summary webkit styles */
+::-webkit-details-marker {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+}
+
+body {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+}
+
+p {
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.paragraph--block {
+  text-align: justify;
+}
+
+.heading {
+  color: #00488b;
+  line-height: 1.1;
+}
+.heading--white {
+  color: #f9f9f9;
+}
+.heading--gray {
+  color: #dedee4;
+}
+.heading--primary {
+  color: #00488b;
+}
+.heading--upper {
+  color: #6f6f72;
+  font-size: clamp(1.3331rem, 1.2665rem + 0.3331vw, 1.6663rem);
+  letter-spacing: -0.1rem;
+  font-weight: 400;
+}
+.heading--lower {
+  letter-spacing: 1.4rem;
+  font-size: clamp(3.1575rem, 2.9996rem + 0.7894vw, 3.9469rem);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.heading--h1 {
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  font-size: clamp(2.3688rem, 2.2504rem + 0.5919vw, 2.9606rem);
+  text-transform: uppercase;
+  text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.3);
+}
+.heading--h2 {
+  line-height: 0.85;
+  margin-block-end: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
+}
+
+.btn {
+  padding-block: clamp(0.75rem, 0.7125rem + 0.1875vw, 0.9375rem);
+  padding-inline: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
+  border-radius: 0.2rem;
+  width: fit-content;
+  display: inline-block;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  font-weight: 700;
+  color: #f9f9f9;
+  text-transform: uppercase;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s;
+}
+.btn:hover {
+  background-color: #ede6dd;
+  color: #00488b;
+}
+.btn--primary {
+  background-color: #00488b;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hb__container {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: clamp(0.5rem, 0.475rem + 0.125vw, 0.625rem);
+}
+.hb__container:hover .hb__line {
+  background-color: #00488b;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.hb__line {
+  display: inline-block;
+  border-radius: 0.125rem;
+  border-width: 1px;
+  width: clamp(3rem, 2.85rem + 0.75vw, 3.75rem);
+  height: clamp(0.25rem, 0.2375rem + 0.0625vw, 0.3125rem);
+  background-color: #f9f9f9;
+  transition: all 0.3s;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100svh;
+  background: url(./img/hero.jpg) no-repeat center top;
+  background-size: cover;
+}
+.hero__main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 2.85rem + 0.75vw, 3.75rem);
+  padding-bottom: clamp(7rem, 6.65rem + 1.75vw, 8.75rem);
+}
+.hero__sub {
+  display: flex;
+  align-items: center;
+}
+.hero__sub-line {
+  display: inline-block;
+  height: clamp(0.125rem, 0.125rem + 0vw, 0.125rem);
+  background-color: #f9f9f9;
+}
+.hero__sub-line--short {
+  width: 8.333333%;
+}
+.hero__sub-line--long {
+  width: 100%;
+}
+.hero__sub-solutions {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  margin-inline: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  font-weight: 300;
+  color: #f9f9f9;
+  white-space: nowrap;
+}
+
+.logo {
+  font-size: clamp(1.7769rem, 1.688rem + 0.4444vw, 2.2213rem);
+  color: #f9f9f9;
+}
+
+.about__container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 100svh;
+}
+.about__main {
+  grid-column: 1/7;
+  height: fit-content;
+}
+.about__imgbox-big {
+  grid-column: 10/-1;
+  grid-row: 1/3;
+}
+.about__imgbox-small {
+  grid-row: 2/3;
+  grid-column: 1/6;
+  position: relative;
+  display: flex;
+  align-self: end;
+}
+
+.about__img-big {
+  object-fit: cover;
+  height: 100%;
+  width: auto;
+}
+
+.about__img-small {
+  height: 80%;
+  background-size: cover;
+  background-image: url(./img/about/solarpanel.jpg);
+}
+
+.energyinfo__container {
+  display: flex;
+  padding-inline: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  padding-block: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
+  gap: clamp(3rem, 2.85rem + 0.75vw, 3.75rem);
+  justify-content: space-around;
+  background-color: #dedee4;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.energyinfo__power {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.25rem, 0.2375rem + 0.0625vw, 0.3125rem);
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,24 @@
+.btn {
+  padding-block: $space-xs;
+  padding-inline: $space-md;
+  border-radius: $b-radius-base;
+  width: fit-content;
+  display: inline-block;
+  font-size: $fs-base;
+  font-weight: 700;
+  color: $c-white;
+  text-transform: uppercase;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $c-secondary;
+    color: $c-primary;
+  }
+
+  &--primary {
+    background-color: $c-primary;
+  }
+}

@@ -1,0 +1,57 @@
+body {
+  font-size: $fs-base;
+}
+
+p {
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.paragraph--block {
+  text-align: justify;
+}
+
+.heading {
+  color: $c-primary;
+  line-height: 1.1;
+
+  &--white {
+    color: $c-white;
+  }
+
+  &--gray {
+    color: $c-gray;
+  }
+
+  &--primary {
+    color: $c-primary;
+  }
+
+  &--upper {
+    color: $c-gray-dark;
+    font-size: $fs-md;
+    letter-spacing: -0.1rem;
+    font-weight: 400;
+  }
+  &--lower {
+    // padding-left: $space-xl;
+    letter-spacing: 1.4rem;
+    font-size: $fs-2xl;
+    text-transform: uppercase;
+
+    font-weight: 600;
+  }
+
+  &--h1 {
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    font-size: $fs-xl;
+    text-transform: uppercase;
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.3);
+  }
+
+  &--h2 {
+    line-height: 0.85;
+    margin-block-end: $space-md;
+  }
+}
