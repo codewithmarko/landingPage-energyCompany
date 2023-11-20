@@ -13,86 +13,69 @@
       rel="stylesheet"
     />
     <!-- Font -->
+    <script defer type="module" src="/main.js"></script>
     <title>NexaGreen</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <header>
-      <div
-        class="flex h-screen w-full flex-col justify-between bg-hero bg-cover bg-center p-16"
-      >
-        <nav class="flex items-center justify-between">
-          <p
-            class="text-3xl text-white [text-shadow:_0_4px_4px_rgb(0_0_0_/_25%)]"
-          >
-            NexaGreen X
-          </p>
-          <div class="group flex cursor-pointer flex-col gap-1">
-            <span
-              class="inline-block h-1.5 w-10 rounded-sm border bg-white shadow-sm transition-colors duration-300 group-hover:bg-blue-900"
-            ></span>
-            <span
-              class="inline-block h-1.5 w-10 rounded-sm border bg-white shadow-sm transition-colors duration-300 group-hover:bg-blue-900"
-            ></span>
-            <span
-              class="inline-block h-1.5 w-10 rounded-sm border bg-white shadow-sm transition-colors duration-300 group-hover:bg-blue-900"
-            ></span>
+      <div class="container hero">
+        <nav class="navbar">
+          <p class="logo">NexaGreen X</p>
+          <div class="hb__container">
+            <span class="hb__line"></span>
+            <span class="hb__line"></span>
+            <span class="hb__line"></span>
           </div>
         </nav>
-        <div class="gap -mt-32 flex flex-col gap-12">
-          <h1
-            class="text-4xl uppercase text-white [text-shadow:_0_4px_4px_rgb(0_0_0_/_25%)]"
-          >
-            <span class="block"> We are shaping the future</span>
-            <span> with sustainable energy solutions.</span>
+        <div class="hero__main">
+          <h1 class="heading heading--h1">
+            <span class="heading--white block">We are shaping the future </span>
+            <span class="heading--white">with </span>
+            <span class="">sustainable energy solutions </span>
           </h1>
-          <a
-            href="#"
-            class="w-fit rounded-sm bg-blue-900 px-10 py-2 uppercase text-white shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-            >Learn more</a
-          >
+          <a href="#" class="btn btn--primary">Learn more</a>
         </div>
-        <div class="flex items-center">
-          <span class="inline-block h-0.5 w-1/12 bg-white"></span>
-          <p class="mx-8 whitespace-nowrap font-light text-white">
-            Solara - WindStream - AquaPure
-          </p>
-          <span class="inline-block h-0.5 w-10/12 bg-white"></span>
+        <div class="hero__sub flex items-center">
+          <span class="hero__sub-line hero__sub-line--short"></span>
+          <p class="hero__sub-solutions">Solara - WindStream - AquaPure</p>
+          <span class="hero__sub-line hero__sub-line--long"></span>
         </div>
       </div>
     </header>
     <main>
       <section class="about">
-        <div class="grid grid-cols-3 grid-rows-2">
-          <div class="col-span-2 mt-12 p-16">
-            <h2 class="text-2xl font-bold uppercase leading-tight">
-              <span class="block">It is our responsibility to create</span>
-              <span class="block">an uncompromising future.</span>
+        <div class="about__container">
+          <div class="about__main container">
+            <h2 class="heading heading--h2">
+              <span class="heading--upper block">
+                creating an
+                <span class="uppercase"> uncompromising </span>
+              </span>
+              <span class="heading--lower heading--lower--future">future</span>
             </h2>
-            <p class="my-8 w-10/12">
-              EcoTech Innovations, founded in 2020, is driving eco-friendly
-              innovations. Our aim is a sustainable future through
-              energy-efficient technologies. Our products and services promote
-              responsibility and sustainability.
+            <p class="paragraph--block">
+              We are founded in 2020, and are driving eco-friendly innovations.
+              Our aim is a sustainable future through energy-efficient
+              technologies. Our products and services promote responsibility and
+              sustainability.
             </p>
           </div>
-          <div class="row-span-2 shadow-xl">
+          <div class="about__imgbox-big">
             <img
-              class="h-full object-cover"
+              class="about__img-big"
               src="./img/about/windturbines_coast.jpg"
-              alt=""
+              alt="Windturbines on the coast."
             />
           </div>
-          <div
-            class="flex flex-col items-center bg-aboutSolar bg-no-repeat shadow-xl"
-          >
+          <div class="about__imgbox-small about__img-small">
             <div
-              class="flex w-fit -translate-y-2/4 place-content-center items-center gap-9 bg-gray-300 px-10 py-3 shadow-xl"
+              class="energyinfo__container flex w-fit -translate-y-2/4 place-content-center items-center gap-9 rounded-sm bg-gray-300 px-10 py-6 shadow-xl"
             >
-              <div class="flex flex-col items-center">
+              <div class="energyinfo__power flex flex-col items-center">
                 <svg
-                  width="56"
-                  height="56"
+                  width="50"
+                  height="50"
                   viewBox="0 0 56 56"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -178,10 +161,10 @@
                 </svg>
                 <p>solar power</p>
               </div>
-              <div class="flex flex-col items-center">
+              <div class="energyinfo__power flex flex-col items-center">
                 <svg
                   width="31"
-                  height="56"
+                  height="50"
                   viewBox="0 0 31 56"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -213,48 +196,36 @@
                 </svg>
                 <p class="">wind power</p>
               </div>
-              <div class="flex h-full flex-col justify-end">
+              <div class="energyinfo__power flex h-full flex-col justify-end">
                 <svg
-                  width="95"
-                  height="19"
-                  viewBox="0 0 95 19"
+                  width="97"
+                  height="50"
+                  viewBox="0 0 97 38"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M42.3267 5.50721C38.6139 4.43251 34.1584 0.87655 21.8529 7.80131C10.0778 16.5914 3.81895 13.9531 0 13.0354C1.80339 12.0031 6.15276 15.3296 19.9434 5.50718C32.9915 -3.32516 40.7355 3.17068 42.3267 5.50721Z"
+                    d="M43.3267 16.7966C39.6139 16.1056 35.1584 13.8194 22.8529 18.2715C11.0778 23.9229 4.81895 22.2267 1 21.6367C2.80339 20.973 7.15276 23.1116 20.9434 16.7966C33.9915 11.118 41.7355 15.2944 43.3267 16.7966Z"
                     fill="black"
                   />
                   <path
-                    d="M95 7.52552C91.2871 6.45082 86.8317 2.89486 74.5262 9.81963C62.7511 18.6097 56.4922 15.9714 52.6733 15.0538C54.4767 14.0214 58.826 17.3479 72.6167 7.52549C85.6648 -1.30685 93.4088 5.18899 95 7.52552Z"
+                    d="M96 18.0942C92.2871 17.4032 87.8317 15.117 75.5262 19.5691C63.7511 25.2205 57.4922 23.5243 53.6733 22.9343C55.4767 22.2706 59.826 24.4093 73.6167 18.0942C86.6648 12.4156 94.4088 16.592 96 18.0942Z"
                     fill="black"
                   />
                   <path
-                    d="M71.4851 6.57407C66.9472 5.00336 61.6089 0.504587 46.4616 9.927C31.5099 22.2018 24.4201 18.9181 19.7525 17.5769C21.9566 16.0681 27.2725 20.9299 44.1278 6.57403C60.0754 -6.33478 69.5403 3.15915 71.4851 6.57407Z"
+                    d="M72.4851 17.4825C67.9472 16.4727 62.6089 13.5803 47.4616 19.6382C32.5099 27.53 25.4201 25.4188 20.7525 24.5565C22.9566 23.5864 28.2725 26.7122 45.1278 17.4825C61.0754 9.18306 70.5403 15.287 72.4851 17.4825Z"
                     fill="black"
                   />
                 </svg>
-                <p class="mt-3">hydro power</p>
+
+                <p class="energyinfo__power mt-3">hydro power</p>
               </div>
             </div>
           </div>
-          <div class="flex h-full w-full items-center justify-center gap-14">
-            <div class="circle-box relative inline-block -translate-y-2/4">
-              <svg
-                class="progress-ring -z-10"
-                width="150"
-                height="150"
-                viewBox="0 0 183 183"
-              >
-                <circle
-                  class="track"
-                  cx="91.5"
-                  cy="91.5"
-                  r="88"
-                  stroke-width="4"
-                  fill="grey"
-                  stroke="rgb(30 58 138)"
-                />
+          <div class="about__progress">
+            <div class="progress-ring__container">
+              <svg class="progress-ring" viewBox="0 0 183 183">
+                <circle class="track" cx="91.5" cy="91.5" r="88" />
                 <circle
                   class="progress-ring__circle"
                   cx="91.5"
@@ -265,34 +236,16 @@
                   stroke="white"
                 />
               </svg>
-              <div
-                class="absolute left-2/4 top-2/4 z-10 flex h-36 w-36 -translate-x-2/4 -translate-y-2/4 flex-col items-center justify-center rounded-full bg-gray-300 shadow-2xl"
-              >
-                <p class="font-semibold">119</p>
-                <p class="font-semibold">countries</p>
-              </div>
+              <p class="progress-ring__text">
+                <span class="paragraph--bold progress-ring__text--main">
+                  119
+                </span>
+                <span class="">countries</span>
+              </p>
             </div>
-            <div
-              class="circle-box circle-full relative inline-block translate-y-2/4"
-            >
-              <svg
-                class="progress-ring -z-10"
-                width="150"
-                height="150"
-                viewBox="0 0 183 183"
-                stroke-width="4"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  class="track"
-                  cx="91.5"
-                  cy="91.5"
-                  r="88"
-                  stroke-width="4"
-                  fill="grey"
-                  stroke="rgb(30 58 138)"
-                />
+            <div class="progress-ring__container">
+              <svg class="progress-ring" viewBox="0 0 183 183">
+                <circle class="track" cx="91.5" cy="91.5" r="88" />
                 <circle
                   class="progress-ring__circle full"
                   cx="91.5"
@@ -303,13 +256,168 @@
                   stroke="white"
                 />
               </svg>
+              <p class="progress-ring__text">
+                <span class="paragraph--bold progress-ring__text--main">
+                  10,000
+                </span>
+                <span class="">GW/h</span>
+              </p>
+            </div>
+            <div class="progress-ring__container">
+              <svg class="progress-ring" viewBox="0 0 183 183">
+                <circle class="track" cx="91.5" cy="91.5" r="88" />
+                <circle
+                  class="progress-ring__circle full"
+                  cx="91.5"
+                  cy="91.5"
+                  r="88.5"
+                  stroke-width="4"
+                  fill="none"
+                  stroke="white"
+                />
+              </svg>
+              <p class="progress-ring__text">
+                <span class="paragraph--bold progress-ring__text--main">
+                  365
+                </span>
+                <span class="">days/year</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="overlay">
+        <div class="textContainerStart">
+          <p class="textStart">2030</p>
+        </div>
+        <div class="textContainerEnd container">
+          <div class="textContainerEnd__wrapper">
+            <div class="textContainerEnd__wrapper-inner">
+              <h2 class="heading heading--h2">
+                <span class="block heading--gray-dark heading--bigSpan"
+                  >by</span
+                >
+                <span class="textEnd heading--lower">2030</span>
+                <span class="block heading--gray-dark heading--bigSpan"
+                  >we will change</span
+                >
+                <span class="block heading--gray-dark heading--bigSpan"
+                  >the world</span
+                >
+              </h2>
+            </div>
+          </div>
+
+          <div class="mission">
+            <div class="mission__container">
               <div
-                class="absolute left-2/4 top-2/4 z-10 flex h-36 w-36 -translate-x-2/4 -translate-y-2/4 flex-col items-center justify-center rounded-full bg-gray-300 shadow-2xl"
+                data-pos="0"
+                id="sustainability"
+                class="progressContainer mission-content__container"
               >
-                <p class="font-semibold">10.000</p>
-                <p class="font-semibold">GWh / day</p>
+                <h3 class="heading heading--h3">Sustainability</h3>
+                <p class="mission-content__container-text paragraph--block">
+                  <span class="mission-content__container-textspace">
+                    We firmly believe that sustainable practices and
+                    eco-friendly technologies are the key to shaping a better
+                    future.
+                  </span>
+                  <span>
+                    We are passionately committed to preserving the environment
+                    and resource efficiency.
+                  </span>
+                </p>
+                <img
+                  src="/img/mission/greenForest.jpg"
+                  alt="Street in the Middle of a forest on a mountain"
+                  class="mission-content__container-image"
+                />
+              </div>
+              <div
+                data-pos="1"
+                id="innovation"
+                class="progressContainer mission-content__container"
+              >
+                <h3 class="heading heading--h3">Innovation</h3>
+                <p class="mission-content__container-text paragraph--block">
+                  <span class="mission-content__container-textspace">
+                    Our culture is characterized by constant innovation and
+                    creative thinking.
+                  </span>
+                  <span>
+                    We strive to continuously develop new solutions to make the
+                    world more sustainable and environmentally friendly
+                  </span>
+                </p>
+                <img
+                  src="/img/mission/greenForest.jpg"
+                  alt="Street in the Middle of a forest on a mountain"
+                  class="mission-content__container-image"
+                />
+              </div>
+              <div
+                data-pos="2"
+                id="responsibility"
+                class="progressContainer mission-content__container"
+              >
+                <h3 class="heading heading--h3">Responsibility</h3>
+                <p class="mission-content__container-text paragraph--block">
+                  <span class="mission-content__container-textspace">
+                    We take responsibility for our products and services, and we
+                    endeavor to minimize the impact of our business activities
+                    on the environment and society.
+                  </span>
+                  <span>
+                    Social responsibility and ethical conduct are of the utmost
+                    importance to us.
+                  </span>
+                </p>
+                <img
+                  src="/img/mission/greenForest.jpg"
+                  alt="Street in the Middle of a forest on a mountain"
+                  class="mission-content__container-image"
+                />
+              </div>
+              <div
+                data-pos="3"
+                id="customer"
+                class="progressContainer mission-content__container"
+              >
+                <h3 class="heading heading--h3">Sustainability</h3>
+                <p class="mission-content__container-text paragraph--block">
+                  <span class="mission-content__container-textspace">
+                    Our customers are at the core of our actions. We listen to
+                    their needs and feedback, and we strive to provide products
+                    and services that meet their requirements.
+                  </span>
+                  <span>
+                    We are passionately committed to preserving the environment
+                    and resource efficiency.
+                  </span>
+                </p>
+                <img
+                  src="/img/mission/greenForest.jpg"
+                  alt="Street in the Middle of a forest on a mountain"
+                  class="mission-content__container-image"
+                />
               </div>
             </div>
+          </div>
+          <div class="progressBlock__container invisible">
+            <a
+              href="#sustainability"
+              class="progressBlock progressBlock--block"
+            ></a>
+            <a
+              href="#innovation"
+              class="progressBlock progressBlock--block"
+            ></a>
+            <a
+              href="#responsibility"
+              class="progressBlock progressBlock--block"
+            ></a>
+            <a href="#customer" class="progressBlock progressBlock--block"></a>
           </div>
         </div>
       </section>
@@ -345,14 +453,278 @@
                 >the world</span
               >
             </h2>
+      <section>
+        <video
+          src="./video/pexels-super-claudioo-7486504 (720p).mp4"
+          class="h-screen w-screen object-cover"
+        ></video>
+      </section>
+      <section class="solutions grid grid-cols-1 gap-48 px-16">
+        <div class="solutions__container container">
+          <div class="solutions__head">
+            <div class="solutions__headingbox">
+              <h3 class="heading heading--h3">Solara</h3>
+              <p class="">Solar Technology out of this world</p>
+              <span class="solutions__dashline"></span>
+            </div>
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="7" width="2" height="16" fill="black" />
+              <rect
+                y="9"
+                width="2"
+                height="16"
+                transform="rotate(-90 0 9)"
+                fill="black"
+              />
+              <rect x="7" y="20" width="2" height="16" fill="black" />
+              <rect
+                y="29"
+                width="2"
+                height="16"
+                transform="rotate(-90 0 29)"
+                fill="black"
+              />
+              <rect x="7" y="40" width="2" height="16" fill="black" />
+              <rect
+                y="49"
+                width="2"
+                height="16"
+                transform="rotate(-90 0 49)"
+                fill="black"
+              />
+              <rect x="27" width="2" height="16" fill="black" />
+              <rect
+                x="20"
+                y="9"
+                width="2"
+                height="16"
+                transform="rotate(-90 20 9)"
+                fill="black"
+              />
+              <rect x="27" y="20" width="2" height="16" fill="black" />
+              <rect
+                x="20"
+                y="29"
+                width="2"
+                height="16"
+                transform="rotate(-90 20 29)"
+                fill="black"
+              />
+              <rect x="27" y="40" width="2" height="16" fill="black" />
+              <rect
+                x="20"
+                y="49"
+                width="2"
+                height="16"
+                transform="rotate(-90 20 49)"
+                fill="black"
+              />
+              <rect x="47" width="2" height="16" fill="black" />
+              <rect
+                x="40"
+                y="9"
+                width="2"
+                height="16"
+                transform="rotate(-90 40 9)"
+                fill="black"
+              />
+              <rect x="47" y="20" width="2" height="16" fill="black" />
+              <rect
+                x="40"
+                y="29"
+                width="2"
+                height="16"
+                transform="rotate(-90 40 29)"
+                fill="black"
+              />
+              <rect x="47" y="40" width="2" height="16" fill="black" />
+              <rect
+                x="40"
+                y="49"
+                width="2"
+                height="16"
+                transform="rotate(-90 40 49)"
+                fill="black"
+              />
+            </svg>
           </div>
-          <div style="height: 2000px" class="block">asdf</div>
-          <div class="h-full0, block bg-red-300">xyz</div>
+          <p class="solutions-inner__sub">
+            <span class="paragraph--primary uppercase">Solara</span>
+            tiles are shaped
+            <span class="paragraph--primary uppercase">hexagonal</span> and can
+            generate up to
+            <span class="paragraph--primary uppercase">100kwH</span>
+            of usable energy
+            <span class="paragraph--primary uppercase">day and night</span>.
+          </p>
+          <div class="solutions-inner__main">
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">
+                Real-time Performance monitoring
+              </h4>
+              <p>24/7</p>
+            </div>
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">
+                Intelligent Energy optimization
+              </h4>
+              <p>Self-adjusting tiles depending on sun position</p>
+            </div>
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">Integrated Fault Detection</h4>
+              <p>early alert function for potential issues and malfunctions</p>
+            </div>
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">Generating power at night</h4>
+              <p>special patented tiles can create energy with moonlight</p>
+            </div>
+          </div>
+
+          <div class="solutions-inner__canvas"></div>
+        </div>
+
+        <div class="solutions__container container">
+          <div class="solutions__head">
+            <div class="solutions__headingbox">
+              <h3 class="heading heading--h3">Windstream</h3>
+              <p class="">where the winds meet the future</p>
+              <span class="solutions__dashline"></span>
+            </div>
+            <svg
+              width="37"
+              height="63"
+              viewBox="0 0 31 56"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.4886 14.2744H15.7367V53.8039H13.4886V14.2744Z"
+                fill="black"
+              />
+              <path
+                d="M10.1164 0.547457L12.2935 -3.18911e-05L16.497 15.9505L14.3198 16.498L10.1164 0.547457Z"
+                fill="black"
+              />
+              <path
+                d="M14.3934 17.1217L15.1659 15.0593L31 20.7188L30.2276 22.7811L14.3934 17.1217Z"
+                fill="black"
+              />
+              <path
+                d="M14.0052 13.1764L15.257 15.0005L1.25176 24.1715L5.80571e-06 22.3473L14.0052 13.1764Z"
+                fill="black"
+              />
+              <rect
+                x="8.99237"
+                y="56"
+                width="2.19608"
+                height="11.2405"
+                transform="rotate(-90 8.99237 56)"
+                fill="black"
+              />
+            </svg>
+          </div>
+          <p class="solutions-inner__sub">
+            <span class="paragraph--primary uppercase">Windstram</span>
+            generates
+            <span class="paragraph--primary uppercase">5MWh</span> per day.
+            Which is equivalent
+
+            <span class="paragraph--primary uppercase">1.000 households</span>
+            per year.
+          </p>
+          <div class="solutions-inner__main">
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">AeroDynamax technology</h4>
+              <p>
+                aerodynamically optimized blades that capture and convert wind
+                more efficiently
+              </p>
+            </div>
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">Smart wind alignment</h4>
+              <p>continuous energy generation in changing wind conditions</p>
+            </div>
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">Self-maintenance mode</h4>
+              <p>autonomous issue maintenance and self diagnosis</p>
+            </div>
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">Seamless grid integrations</h4>
+              <p>cutting-edge grid technology for easy implementation</p>
+            </div>
+          </div>
+
+          <div class="solutions-inner__canvas"></div>
+        </div>
+
+        <div class="solutions__container container">
+          <div class="solutions__head">
+            <div class="solutions__headingbox">
+              <h3 class="heading heading--h3">Aquapure</h3>
+              <p class="">waterflow beyond this universe</p>
+              <span class="solutions__dashline"></span>
+            </div>
+            <svg
+              width="97"
+              height="56"
+              viewBox="0 0 97 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M43.3267 16.7966C39.6139 16.1056 35.1584 13.8194 22.8529 18.2715C11.0778 23.9229 4.81895 22.2267 1 21.6367C2.80339 20.973 7.15276 23.1116 20.9434 16.7966C33.9915 11.118 41.7355 15.2944 43.3267 16.7966Z"
+                fill="black"
+              />
+              <path
+                d="M96 18.0942C92.2871 17.4032 87.8317 15.117 75.5262 19.5691C63.7511 25.2205 57.4922 23.5243 53.6733 22.9343C55.4767 22.2706 59.826 24.4093 73.6167 18.0942C86.6648 12.4156 94.4088 16.592 96 18.0942Z"
+                fill="black"
+              />
+              <path
+                d="M72.4851 17.4825C67.9472 16.4727 62.6089 13.5803 47.4616 19.6382C32.5099 27.53 25.4201 25.4188 20.7525 24.5565C22.9566 23.5864 28.2725 26.7122 45.1278 17.4825C61.0754 9.18306 70.5403 15.287 72.4851 17.4825Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+          <p class="solutions-inner__sub">
+            <span class="paragraph--primary uppercase">aquapure</span>
+            generates
+            <span class="paragraph--primary uppercase">10MW</span> per day.
+            Reliable and powerful source for
+
+            <span class="paragraph--primary uppercase">communities</span> and
+            <span class="paragraph--primary uppercase">industries</span>.
+          </p>
+          <div class="solutions-inner__main">
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">HydroFlow technology</h4>
+              <p>ensures maximum energy extractions</p>
+            </div>
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">Environmental harmony</h4>
+              <p>fish-friendly technology with no impact on ecosystems</p>
+            </div>
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">Waterway alignment</h4>
+              <p>versatile solution for both urban and remote locaitons</p>
+            </div>
+            <div class="solutions__content-container">
+              <h4 class="heading heading--h4">Seamless grid integrations</h4>
+              <p>cutting-edge grid technology for easy implementation</p>
+            </div>
+          </div>
+
+          <div class="solutions-inner__canvas"></div>
         </div>
       </section>
+      <section style="height: 2000px" class="w-full"></section>
     </main>
-    <!-- <section style="height: 2000px">asdf</section> -->
+
     <footer></footer>
-    <script type="module" src="/main.js"></script>
   </body>
 </html>

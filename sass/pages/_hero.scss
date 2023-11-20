@@ -1,0 +1,46 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100svh;
+  background: url(./img/hero.jpg) no-repeat center top;
+  background-size: cover;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xl;
+    padding-bottom: $space-4xl;
+  }
+
+  &__sub {
+    display: flex;
+    align-items: center;
+
+    &-line {
+      display: inline-block;
+      height: $space-5xs;
+      background-color: $c-white;
+
+      &--short {
+        width: 8.333333%;
+      }
+      &--long {
+        width: 100%;
+      }
+    }
+
+    &-solutions {
+      font-size: $fs-base;
+      margin-inline: $space-base;
+      font-weight: 300;
+      color: $c-white;
+      white-space: nowrap;
+    }
+  }
+}
+.logo {
+  font-size: $fs-lg;
+  color: $c-white;
+}

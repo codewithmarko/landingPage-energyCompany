@@ -1,0 +1,101 @@
+body {
+  font-size: $fs-base;
+}
+
+p {
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.paragraph {
+  &--primary {
+    color: $c-primary;
+  }
+  &--white {
+    color: $c-white;
+  }
+
+  &--gray {
+    color: $c-gray;
+  }
+
+  &--primary {
+    color: $c-primary;
+  }
+  &--bold {
+    font-weight: 700;
+  }
+  &--semibold {
+    font-weight: 500;
+  }
+  &--block {
+    text-align: justify;
+  }
+}
+
+.heading {
+  color: $c-primary;
+  width: fit-content;
+
+  &--white {
+    color: $c-white;
+  }
+
+  &--gray {
+    color: $c-gray;
+  }
+  &--gray-dark {
+    color: $c-gray-dark;
+  }
+
+  &--primary {
+    color: $c-primary;
+  }
+
+  &--upper {
+    color: $c-gray-dark;
+    font-size: $fs-md;
+    letter-spacing: -0.1rem;
+    font-weight: 400;
+  }
+  &--lower {
+    // padding-left: $space-xl;
+    font-size: $fs-2xl;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &--future {
+      letter-spacing: 1.4rem;
+    }
+  }
+
+  &--bigSpan {
+    font-size: $fs-md;
+  }
+
+  &--h1 {
+    line-height: 1.1;
+
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    font-size: $fs-xl;
+    text-transform: uppercase;
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.3);
+  }
+
+  &--h2 {
+    line-height: 0.85;
+    margin-block-end: $space-base;
+  }
+
+  &--h3 {
+    margin-block-end: $space-xs;
+    font-size: $fs-lg;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  &--h4 {
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
