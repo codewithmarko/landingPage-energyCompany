@@ -8,6 +8,9 @@ p {
 }
 
 .paragraph {
+  &--primary {
+    color: $c-primary;
+  }
   &--white {
     color: $c-white;
   }
@@ -25,15 +28,14 @@ p {
   &--semibold {
     font-weight: 500;
   }
-}
-
-.paragraph--block {
-  text-align: justify;
+  &--block {
+    text-align: justify;
+  }
 }
 
 .heading {
   color: $c-primary;
-  line-height: 1.1;
+  width: fit-content;
 
   &--white {
     color: $c-white;
@@ -41,6 +43,9 @@ p {
 
   &--gray {
     color: $c-gray;
+  }
+  &--gray-dark {
+    color: $c-gray-dark;
   }
 
   &--primary {
@@ -55,14 +60,22 @@ p {
   }
   &--lower {
     // padding-left: $space-xl;
-    letter-spacing: 1.4rem;
     font-size: $fs-2xl;
     text-transform: uppercase;
-
     font-weight: 700;
+
+    &--future {
+      letter-spacing: 1.4rem;
+    }
+  }
+
+  &--bigSpan {
+    font-size: $fs-md;
   }
 
   &--h1 {
+    line-height: 1.1;
+
     letter-spacing: 0.1rem;
     font-weight: 700;
     font-size: $fs-xl;
@@ -73,5 +86,16 @@ p {
   &--h2 {
     line-height: 0.85;
     margin-block-end: $space-base;
+  }
+
+  &--h3 {
+    margin-block-end: $space-xs;
+    font-size: $fs-lg;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  &--h4 {
+    font-weight: 400;
+    text-transform: uppercase;
   }
 }

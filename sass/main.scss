@@ -17,8 +17,7 @@
   'components/hamburgerMenu';
 
 // 6. Page-specific styles
-@import 'pages/hero';
-@import 'pages/about';
+@import 'pages/hero', 'pages/about', 'pages/twentythirty', 'pages/solutions';
 
 // 7. Themes
 @import 'themes/default';

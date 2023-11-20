@@ -64,6 +64,10 @@ MaxVP: 1920px, 20px, 1.33
   display: block;
 }
 
+.hidden {
+  display: none;
+}
+
 /***
     The new CSS reset - version 1.11.2 (last updated 15.11.2023)
     GitHub page: https://github.com/elad2412/the-new-css-reset
@@ -199,6 +203,9 @@ p {
   font-weight: 300;
 }
 
+.paragraph--primary {
+  color: #00488b;
+}
 .paragraph--white {
   color: #f9f9f9;
 }
@@ -214,20 +221,22 @@ p {
 .paragraph--semibold {
   font-weight: 500;
 }
-
 .paragraph--block {
   text-align: justify;
 }
 
 .heading {
   color: #00488b;
-  line-height: 1.1;
+  width: fit-content;
 }
 .heading--white {
   color: #f9f9f9;
 }
 .heading--gray {
   color: #dedee4;
+}
+.heading--gray-dark {
+  color: #6f6f72;
 }
 .heading--primary {
   color: #00488b;
@@ -239,12 +248,18 @@ p {
   font-weight: 400;
 }
 .heading--lower {
-  letter-spacing: 1.4rem;
   font-size: clamp(3.1575rem, 2.9996rem + 0.7894vw, 3.9469rem);
   text-transform: uppercase;
   font-weight: 700;
 }
+.heading--lower--future {
+  letter-spacing: 1.4rem;
+}
+.heading--bigSpan {
+  font-size: clamp(1.3331rem, 1.2665rem + 0.3331vw, 1.6663rem);
+}
 .heading--h1 {
+  line-height: 1.1;
   letter-spacing: 0.1rem;
   font-weight: 700;
   font-size: clamp(2.3688rem, 2.2504rem + 0.5919vw, 2.9606rem);
@@ -254,6 +269,16 @@ p {
 .heading--h2 {
   line-height: 0.85;
   margin-block-end: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+}
+.heading--h3 {
+  margin-block-end: clamp(0.75rem, 0.7125rem + 0.1875vw, 0.9375rem);
+  font-size: clamp(1.7769rem, 1.688rem + 0.4444vw, 2.2213rem);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.heading--h4 {
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .btn {
@@ -451,6 +476,183 @@ p {
 .progress-ring__text--main {
   color: #00488b;
   font-size: clamp(1.3331rem, 1.2665rem + 0.3331vw, 1.6663rem);
+}
+
+.overlay {
+  position: relative;
+}
+
+/*
+EVERYTHING FOR ANIMATION
+*/
+.textContainerStart {
+  pointer-events: none;
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #00488b;
+}
+
+.textStart {
+  background: url(./img/windTurbines.jpg);
+  background-size: cover;
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  color: transparent;
+  text-transform: uppercase;
+  background-clip: text;
+  background-size: cover;
+  font-size: 450px;
+}
+
+.textContainerEnd {
+  position: sticky;
+  top: -90px;
+  display: flex;
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  justify-content: flex-start;
+  height: fit-content;
+  width: 100%;
+}
+.textContainerEnd__wrapper {
+  position: sticky;
+  top: 0;
+  height: fit-content;
+  width: fit-content;
+  padding-top: clamp(9rem, 8.55rem + 2.25vw, 11.25rem);
+  padding-right: clamp(4rem, 3.8rem + 1vw, 5rem);
+}
+.textContainerEnd__wrapper-inner {
+  display: inline-block;
+}
+
+.mission {
+  height: 100%;
+  width: fit-content;
+  border-left: 2px solid #dedee4;
+}
+.mission__container {
+  margin-top: clamp(9rem, 8.55rem + 2.25vw, 11.25rem);
+  display: inline-block;
+  height: 100%;
+  max-width: 56rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding-left: clamp(6rem, 5.7rem + 1.5vw, 7.5rem);
+}
+
+.mission-content__container {
+  display: flex;
+  height: 100svh;
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+}
+.mission-content__container-text {
+  margin-bottom: clamp(3rem, 2.85rem + 0.75vw, 3.75rem);
+  display: flex;
+  flex-direction: column;
+}
+.mission-content__container-textspace {
+  padding-bottom: clamp(0.25rem, 0.2375rem + 0.0625vw, 0.3125rem);
+}
+.mission-content__container-image {
+  display: inline-block;
+  height: clamp(10rem, 9.5rem + 2.5vw, 12.5rem);
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.progressBlock {
+  align-self: end;
+}
+.progressBlock__container {
+  position: sticky;
+  top: 50%;
+  display: flex;
+  height: fit-content;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-content: center;
+  gap: clamp(0.75rem, 0.7125rem + 0.1875vw, 0.9375rem);
+}
+.progressBlock--block {
+  display: inline-block;
+  height: clamp(0.5rem, 0.475rem + 0.125vw, 0.625rem);
+  width: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+  border-radius: 0.125rem;
+  background-color: #dedee4;
+  transition: all 0.3s;
+}
+.progressBlock--block:hover {
+  background-color: #00488b;
+}
+.progressBlock--active {
+  background-color: #00488b;
+}
+
+.solutions {
+  display: grid;
+  padding-block: clamp(4rem, 3.8rem + 1vw, 5rem);
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 12rem;
+}
+.solutions__container {
+  display: grid;
+  height: 100svh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr 60%;
+  column-gap: clamp(4rem, 3.8rem + 1vw, 5rem);
+}
+.solutions__head {
+  display: flex;
+  grid-column: span 2/span 2;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+}
+.solutions__headingbox {
+  width: 50%;
+  line-height: 0.5;
+}
+.solutions__dashline {
+  display: block;
+  width: 100%;
+  margin-top: clamp(0.75rem, 0.7125rem + 0.1875vw, 0.9375rem);
+  border-bottom: 1px dashed #6f6f72;
+}
+
+.solutions-inner__main {
+  grid-row-start: 3;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
+  flex-wrap: wrap;
+}
+.solutions-inner__sub {
+  align-self: center;
+  grid-row-start: 2;
+  font-weight: 400;
+}
+.solutions-inner__canvas {
+  grid-column-start: 2;
+  grid-row: span 2/span 2;
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+}
+
+.solutions__content-container {
+  height: fit-content;
 }
 
 /*# sourceMappingURL=style.css.map */
