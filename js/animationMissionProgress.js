@@ -18,7 +18,6 @@ progressContainers.forEach((container, i) => {
         );
         progressBlock[i].classList.add('progressBlock--active');
       },
-      animation: gsap.to('.image', {}),
     },
   });
 });

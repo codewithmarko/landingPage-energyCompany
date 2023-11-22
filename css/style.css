@@ -643,16 +643,24 @@ EVERYTHING FOR ANIMATION
   grid-row-start: 2;
   font-weight: 400;
 }
-.solutions-inner__canvas {
+.solutions-inner__canvas-container {
   grid-column-start: 2;
   grid-row: span 2/span 2;
-  height: 100%;
+}
+.solutions-inner__canvas {
   width: 100%;
-  background-color: blue;
+  height: 100%;
+  display: block;
 }
 
 .solutions__content-container {
   height: fit-content;
+}
+
+#canvasTest {
+  width: 100%;
+  height: 100vh;
+  border-top: 5px solid red;
 }
 
 /*# sourceMappingURL=style.css.map */
