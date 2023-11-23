@@ -612,6 +612,7 @@ EVERYTHING FOR ANIMATION
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr 60%;
   column-gap: clamp(4rem, 3.8rem + 1vw, 5rem);
+  position: relative;
 }
 .solutions__head {
   display: flex;
@@ -657,10 +658,13 @@ EVERYTHING FOR ANIMATION
   height: fit-content;
 }
 
-#canvasTest {
-  width: 100%;
-  height: 100vh;
-  border-top: 5px solid red;
+#canvas1,
+#canvas2,
+#canvas3 {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
