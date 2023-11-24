@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite';
+import glsl from 'vite-plugin-glsl';
 import autoprefixer from 'autoprefixer';
 import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   server: {
@@ -9,6 +10,7 @@ export default defineConfig({
   preview: {
     port: 8080,
   },
+  plugins: [glsl()],
   css: {
     preprocessorOptions: {
       sass: {

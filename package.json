@@ -16,7 +16,8 @@
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "sass": "^1.69.5",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-glsl": "^1.1.2"
   },
   "dependencies": {
     "gsap": "^3.12.2",
