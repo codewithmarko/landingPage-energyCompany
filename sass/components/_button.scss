@@ -21,4 +21,30 @@
   &--primary {
     background-color: $c-primary;
   }
+
+  &--gray-dark {
+    background-color: $c-gray-dark;
+  }
+}
+
+.btn-s {
+  background-color: $c-white;
+  font-weight: 300;
+  display: inline-block;
+  border-radius: $b-radius-base;
+  padding-block: $space-2xs;
+  padding-inline: $space-base;
+
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s;
+  color: $c-primary;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: $c-primary;
+    border: 1px solid white;
+    color: $c-white;
+  }
 }

@@ -1,5 +1,51 @@
+.solutions__bg {
+  height: 100svh;
+  width: 100%;
+  background-image: url(./img/solutions/earth-bg.jpg);
+  background-size: cover;
+  position: sticky;
+  top: 0;
+}
+
+.solutions__layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url(./img/solutions/earth-layer.png);
+  background-size: cover;
+  z-index: 2;
+}
+
+.layer__text {
+  width: 100%;
+  position: absolute;
+  top: 27.5%;
+  left: 50%;
+
+  & .heading:first-child {
+    transform: translateX(-40%);
+    text-shadow:
+      0px 3px 0px #6f6f72,
+      0px 14px 10px rgba(0, 0, 0, 0.15),
+      0px 24px 2px rgba(0, 0, 0, 0.1),
+      0px 34px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  & .heading:last-child {
+    transform: translateX(40%);
+    text-shadow:
+      0px 3px 0px #6f6f72,
+      0px 14px 10px rgba(0, 0, 0, 0.15),
+      0px 24px 2px rgba(0, 0, 0, 0.1),
+      0px 34px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
 .solutions {
+  position: relative;
+  z-index: 3;
   display: grid;
+  background-color: $c-white;
 
   padding-block: $space-2xl;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -9,10 +55,12 @@
     display: grid;
     height: 100svh;
     grid-template-columns: 1fr 1fr;
-    // grid-template-rows: auto 60% 1fr;
     grid-template-rows: auto 1fr 60%;
     column-gap: $space-2xl;
-    position: relative;
+    position: sticky;
+    background-color: $c-white;
+
+    top: 0;
   }
   &__head {
     display: flex;
@@ -38,14 +86,25 @@
     grid-row-start: 3;
     display: flex;
     flex-direction: column;
-    gap: $space-md;
-    flex-wrap: wrap;
+    gap: $space-base;
+    // flex-wrap: wrap;
     // gap: $space-md;
+    // border: 1px solid black;
+    height: fit-content;
+    padding: $space-lg;
+    background-color: $c-gray;
+    border-radius: $b-radius-md;
+    box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+      rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+      rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   }
   &__sub {
     align-self: center;
     grid-row-start: 2;
     font-weight: 400;
+    margin-bottom: $space-lg;
+    width: 80%;
   }
   &__canvas-container {
     grid-column-start: 2;

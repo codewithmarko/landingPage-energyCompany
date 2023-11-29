@@ -6,6 +6,7 @@ import waterVertexShader from '../glsl/water/vertex.glsl';
 import waterFragmentShader from '../glsl/water/fragment.glsl';
 
 //Canvases
+
 const canvas1 = document.getElementById('canvas1');
 const canvas2 = document.getElementById('canvas2');
 const canvas3 = document.getElementById('canvas3');
@@ -32,6 +33,7 @@ class Object {
       maxDistance
     );
     this.scene = this.experience.scene;
+
     this.textureLoader = this.experience.textureLoader;
     this.gltfLoader = this.experience.gltfLoader;
 
@@ -99,9 +101,15 @@ class Object {
 
   loadGLTF(name) {
     this.gltfLoader.load(`./models/${name}/${name}.glb`, (gltf) => {
+      console.log(gltf);
       gltf.scene.traverse((child) => {
         child.material = this.material;
       });
+
+      //Check if model needs repositioning on canvas
+      if (gltf.parser.options.path === './models/windstream/') {
+        console.log((gltf.scene.position.y = -4));
+      }
 
       //Check if child of model needs shader material
       const waterMesh = gltf.scene.children.find(
@@ -146,6 +154,7 @@ class Experience {
       false
     );
     this.pixelRatio = Math.min(window.devicePixelRatio, 2);
+    this.requestRenderIfNotRequested();
   }
 
   createScene() {
@@ -162,6 +171,7 @@ class Experience {
       1000
     );
     camera.position.set(x, y, z);
+
     camera.updateProjectionMatrix();
     this.scene.add(camera);
     return camera;
@@ -192,14 +202,12 @@ class Experience {
   renderRequested = false;
 
   tick() {
-    console.log('tick');
     this.renderRequested = undefined;
     this.controls.update();
     this.renderer.render(this.scene, this.camera);
   }
 
   requestRenderIfNotRequested() {
-    console.log('requestedFrame');
     if (!this.renderRequested) {
       this.renderRequested = true;
 
@@ -210,4 +218,14 @@ class Experience {
 
 //canvas, name, fov,x,y,z, minDistance, maxDistance
 const solara = new Object(canvas1, 'solara', 65, 0, 8, 8, 6.0, 8.0);
-const aquapure = new Object(canvas3, 'aquapure', 65, 0, 3, 10, 8.0, 10.0);
+const windstream = new Object(
+  canvas2,
+  'windstream',
+  65,
+  -6.40659264189567,
+  5.584728290347182,
+  -11.37985916291501,
+  10,
+  15.0
+);
+const aquapure = new Object(canvas3, 'aquapure', 65, 0, 3, 12, 9.0, 12.0);

@@ -60,6 +60,10 @@ MaxVP: 1920px, 20px, 1.33
   text-transform: uppercase;
 }
 
+.normalcase {
+  text-transform: none;
+}
+
 .block {
   display: block;
 }
@@ -281,6 +285,62 @@ p {
   text-transform: uppercase;
 }
 
+.section__footer {
+  background-color: #f9f9f9;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.footer__heading {
+  color: #00488b;
+  font-size: clamp(1.3331rem, 1.2665rem + 0.3331vw, 1.6663rem);
+  margin-bottom: clamp(0.5rem, 0.475rem + 0.125vw, 0.625rem);
+}
+.footer__li {
+  color: #100c08;
+}
+.footer__disclaimer {
+  margin-top: clamp(6rem, 5.7rem + 1.5vw, 7.5rem);
+  font-size: clamp(0.75rem, 0.7125rem + 0.1875vw, 0.9375rem);
+  color: #6f6f72;
+}
+
+.carreer__li,
+.links__li {
+  color: #6f6f72;
+  transition: all 0.3s;
+}
+.carreer__li:hover,
+.links__li:hover {
+  color: #00488b;
+  cursor: pointer;
+  transform: translateX(5px);
+}
+
+.cwm {
+  margin-top: clamp(3rem, 2.85rem + 0.75vw, 3.75rem);
+  display: flex;
+  align-items: center;
+}
+.cwm p a {
+  color: #601cbf;
+  border: 1px solid transparent;
+}
+.cwm p a:hover {
+  border-bottom: 1px solid #601cbf;
+}
+
+ion-icon {
+  margin-left: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  display: inline-block;
+  color: #601cbf;
+  color: red;
+  height: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+  width: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+}
+
 .btn {
   padding-block: clamp(0.75rem, 0.7125rem + 0.1875vw, 0.9375rem);
   padding-inline: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
@@ -300,6 +360,27 @@ p {
 }
 .btn--primary {
   background-color: #00488b;
+}
+.btn--gray-dark {
+  background-color: #6f6f72;
+}
+
+.btn-s {
+  background-color: #f9f9f9;
+  font-weight: 300;
+  display: inline-block;
+  border-radius: 0.2rem;
+  padding-block: clamp(0.5rem, 0.475rem + 0.125vw, 0.625rem);
+  padding-inline: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s;
+  color: #00488b;
+  border: 1px solid transparent;
+}
+.btn-s:hover {
+  background-color: #00488b;
+  border: 1px solid white;
+  color: #f9f9f9;
 }
 
 .navbar {
@@ -536,11 +617,13 @@ EVERYTHING FOR ANIMATION
 }
 
 .mission {
+  position: relative;
   height: 100%;
   width: fit-content;
   border-left: 2px solid #dedee4;
 }
 .mission__container {
+  z-index: 5;
   margin-top: clamp(9rem, 8.55rem + 2.25vw, 11.25rem);
   display: inline-block;
   height: 100%;
@@ -600,8 +683,44 @@ EVERYTHING FOR ANIMATION
   background-color: #00488b;
 }
 
+.solutions__bg {
+  height: 100svh;
+  width: 100%;
+  background-image: url(./img/solutions/earth-bg.jpg);
+  background-size: cover;
+  position: sticky;
+  top: 0;
+}
+
+.solutions__layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url(./img/solutions/earth-layer.png);
+  background-size: cover;
+  z-index: 2;
+}
+
+.layer__text {
+  width: 100%;
+  position: absolute;
+  top: 27.5%;
+  left: 50%;
+}
+.layer__text .heading:first-child {
+  transform: translateX(-40%);
+  text-shadow: 0px 3px 0px #6f6f72, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
+}
+.layer__text .heading:last-child {
+  transform: translateX(40%);
+  text-shadow: 0px 3px 0px #6f6f72, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
+}
+
 .solutions {
+  position: relative;
+  z-index: 3;
   display: grid;
+  background-color: #f9f9f9;
   padding-block: clamp(4rem, 3.8rem + 1vw, 5rem);
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 12rem;
@@ -612,7 +731,9 @@ EVERYTHING FOR ANIMATION
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr 60%;
   column-gap: clamp(4rem, 3.8rem + 1vw, 5rem);
-  position: relative;
+  position: sticky;
+  background-color: #f9f9f9;
+  top: 0;
 }
 .solutions__head {
   display: flex;
@@ -636,13 +757,19 @@ EVERYTHING FOR ANIMATION
   grid-row-start: 3;
   display: flex;
   flex-direction: column;
-  gap: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
-  flex-wrap: wrap;
+  gap: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  height: fit-content;
+  padding: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+  background-color: #dedee4;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 .solutions-inner__sub {
   align-self: center;
   grid-row-start: 2;
   font-weight: 400;
+  margin-bottom: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+  width: 80%;
 }
 .solutions-inner__canvas-container {
   grid-column-start: 2;
@@ -665,6 +792,85 @@ EVERYTHING FOR ANIMATION
   width: 50%;
   height: 100%;
   right: 0;
+}
+
+.success__bg {
+  z-index: -10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #00488b;
+  width: 100%;
+  height: 100%;
+}
+.success__bg-svg {
+  height: 100%;
+  width: 100%;
+  transform: rotate(180deg);
+  transform-origin: 50%;
+}
+
+.success {
+  position: relative;
+}
+.success__heading-box {
+  display: inline-block;
+}
+.success__heading-box h3 {
+  margin-bottom: clamp(0.25rem, 0.2375rem + 0.0625vw, 0.3125rem);
+}
+.success__grid {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  transform: translateX(10%);
+  grid-template-rows: 1fr 1fr;
+  justify-items: end;
+  gap: clamp(8rem, 7.6rem + 2vw, 10rem);
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  display: inline-block;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  width: 30rem;
+  background-color: #00488b;
+}
+.card--solara {
+  grid-column: 2/3;
+}
+.card--windstream {
+  grid-column: 1/2;
+  transform: translateY(50%);
+  grid-row: 1/2;
+}
+.card--aquapure {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+.card__img {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+}
+.card__content {
+  padding: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr, 1fr, min-content;
+}
+.card__heading {
+  font-weight: 600;
+  color: #f9f9f9;
+}
+.card__text-box {
+  margin-top: clamp(0.5rem, 0.475rem + 0.125vw, 0.625rem);
+}
+.card__text {
+  color: #f9f9f9;
+}
+.card__btn-box {
+  margin-top: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
 }
 
 /*# sourceMappingURL=style.css.map */

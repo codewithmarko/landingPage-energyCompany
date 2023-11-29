@@ -64,6 +64,7 @@ ScrollTrigger.create({
       });
       gsap.to('.textContainerStart', {
         opacity: self.progress <= 0.99 ? 1 : 0,
+
         duration: 1,
         position: self.progress >= 1 ? 'relative' : 'sticky',
       });

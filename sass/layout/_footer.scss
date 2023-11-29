@@ -1,3 +1,56 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the footer of the site/application.
-// -----------------------------------------------------------------------------
+.section__footer {
+  background-color: $c-white;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  &__heading {
+    color: $c-primary;
+    font-size: $fs-md;
+    margin-bottom: $space-2xs;
+  }
+  &__li {
+    color: $c-black;
+  }
+  &__disclaimer {
+    margin-top: $space-3xl;
+    font-size: $fs-sm;
+    color: $c-gray-dark;
+  }
+}
+
+.carreer__li,
+.links__li {
+  color: $c-gray-dark;
+  transition: all 0.3s;
+  &:hover {
+    color: $c-primary;
+    cursor: pointer;
+    transform: translateX(5px);
+  }
+}
+
+.cwm {
+  margin-top: $space-xl;
+  display: flex;
+  align-items: center;
+
+  & p a {
+    color: $c-purple;
+    border: 1px solid transparent;
+    &:hover {
+      border-bottom: 1px solid $c-purple;
+    }
+  }
+}
+
+ion-icon {
+  margin-left: $space-base;
+  display: inline-block;
+  color: $c-purple;
+  color: red;
+  height: $space-lg;
+  width: $space-lg;
+}
