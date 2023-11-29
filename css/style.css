@@ -72,6 +72,20 @@ MaxVP: 1920px, 20px, 1.33
   display: none;
 }
 
+@keyframes bg-left-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0;
+  }
+}
 /***
     The new CSS reset - version 1.11.2 (last updated 15.11.2023)
     GitHub page: https://github.com/elad2412/the-new-css-reset
@@ -188,6 +202,7 @@ meter {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -329,16 +344,22 @@ p {
   border: 1px solid transparent;
 }
 .cwm p a:hover {
-  border-bottom: 1px solid #601cbf;
+  border-bottom: 2px solid #601cbf;
 }
 
 ion-icon {
   margin-left: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
   display: inline-block;
   color: #601cbf;
-  color: red;
+  fill: #601cbf;
   height: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
   width: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+  padding: 0.5rem;
+  border: 2px solid transparent;
+}
+ion-icon:hover {
+  border: 2px solid #601cbf;
+  border-radius: 1000px;
 }
 
 .btn {
@@ -387,6 +408,57 @@ ion-icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.navdesk {
+  width: 100vw;
+  height: 100svh;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+.navdesk__products {
+  flex-basis: 60%;
+  height: 100%;
+  background-color: #00488b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+}
+.navdesk__menu {
+  flex-basis: 40%;
+  height: 100%;
+  background-color: #f9f9f9;
+}
+.navdesk__icon {
+  stroke: #f9f9f9;
+  height: 3rem;
+  width: 3rem;
+  fill: white;
+}
+
+.products__heading {
+  color: #f9f9f9;
+  font-size: clamp(3.1575rem, 2.9996rem + 0.7894vw, 3.9469rem);
+  width: 85%;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  padding-block: clamp(0.75rem, 0.7125rem + 0.1875vw, 0.9375rem);
+  padding-inline: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
+  background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #f9f9f9 50%);
+  background-size: 200%;
+  transition: all 0.3s;
+}
+.products__heading:hover {
+  background-position: 100%;
+  color: #00488b;
+  transform: translateX(5px);
+}
+.products__heading:hover .navdesk__icon {
+  fill: #00488b;
+  stroke: #00488b;
 }
 
 .hb__container {

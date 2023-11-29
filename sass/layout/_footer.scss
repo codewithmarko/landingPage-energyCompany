@@ -41,7 +41,7 @@
     color: $c-purple;
     border: 1px solid transparent;
     &:hover {
-      border-bottom: 1px solid $c-purple;
+      border-bottom: 2px solid $c-purple;
     }
   }
 }
@@ -50,7 +50,14 @@ ion-icon {
   margin-left: $space-base;
   display: inline-block;
   color: $c-purple;
-  color: red;
+  fill: $c-purple;
   height: $space-lg;
   width: $space-lg;
+  padding: 0.5rem;
+  border: 2px solid transparent;
+
+  &:hover {
+    border: 2px solid $c-purple;
+    border-radius: $b-radius-lg;
+  }
 }

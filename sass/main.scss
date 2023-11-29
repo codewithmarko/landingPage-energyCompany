@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 // 1. Configuration and helpers
-@import 'abstracts/variables', 'abstracts/mixins', 'abstracts/helpers';
+@import 'abstracts/variables', 'abstracts/mixins', 'abstracts/helpers',
+  'abstracts/animations';
 
 // 2. Vendors
 @import 'vendors/normalize';

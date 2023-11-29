@@ -101,14 +101,13 @@ class Object {
 
   loadGLTF(name) {
     this.gltfLoader.load(`./models/${name}/${name}.glb`, (gltf) => {
-      console.log(gltf);
       gltf.scene.traverse((child) => {
         child.material = this.material;
       });
 
       //Check if model needs repositioning on canvas
       if (gltf.parser.options.path === './models/windstream/') {
-        console.log((gltf.scene.position.y = -4));
+        gltf.scene.position.y = -4;
       }
 
       //Check if child of model needs shader material
