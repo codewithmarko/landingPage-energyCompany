@@ -14,3 +14,6 @@ All product models and textures have been crafted and uv unwrapped using Blender
 The design is optimized for following screen sizes:
 - Laptop: 1455px × 802px
 - Phones: Width ranging from 320px to 500px
+
+
+Please be aware that the project has no optimizations, such as image compression, for optimal page speed.
