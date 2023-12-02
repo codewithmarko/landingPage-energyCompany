@@ -212,12 +212,10 @@ meter {
 
 html {
   scroll-behavior: smooth;
-  max-width: 100%;
 }
 
 body {
   background-color: #f9f9f9;
-  border: 1px solid black;
 }
 
 body {
@@ -449,7 +447,7 @@ ion-icon:hover {
 }
 
 .navdesk {
-  width: 100vw;
+  width: 100%;
   height: 100svh;
   position: absolute;
   top: 0;
@@ -763,7 +761,6 @@ header {
   justify-content: center;
   width: 100%;
   grid-column: 6/10;
-  grid-row: 4/5;
 }
 @media (max-width: 31.25em) {
   .about__progress {
@@ -780,7 +777,7 @@ header {
   gap: clamp(3rem, 2.85rem + 0.75vw, 3.75rem);
   justify-content: space-around;
   background-color: #dedee4;
-  width: 95%;
+  width: 80%;
   position: absolute;
   top: 0;
   left: 50%;
@@ -796,6 +793,7 @@ header {
     transform: translate(0);
     left: 0;
     position: relative;
+    width: 95%;
   }
 }
 .energyinfo__power {
@@ -1074,10 +1072,10 @@ EVERYTHING FOR ANIMATION
 }
 
 .layer__text {
-  width: 100%;
   position: absolute;
-  top: 27.5%;
-  left: 50%;
+  top: 22.5%;
+  left: 40%;
+  width: 2rem;
 }
 @media (max-width: 31.25em) {
   .layer__text {
@@ -1091,7 +1089,6 @@ EVERYTHING FOR ANIMATION
   text-shadow: 0px 3px 0px #6f6f72, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
 }
 .layer__text .heading:last-child {
-  transform: translateX(40%);
   text-shadow: 0px 3px 0px #6f6f72, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 31.25em) {

@@ -66,7 +66,7 @@
     justify-content: center;
     width: 100%;
     grid-column: 6 / 10;
-    grid-row: 4/5;
+    // grid-row: 4/5;
 
     @include respond(br-500) {
       grid-column: 1 / -1;
@@ -84,7 +84,7 @@
     gap: $space-xl;
     justify-content: space-around;
     background-color: $c-gray;
-    width: 95%;
+    width: 80%;
     position: absolute;
     top: 0;
     left: 50%;
@@ -103,6 +103,7 @@
       transform: translate(0);
       left: 0;
       position: relative;
+      width: 95%;
     }
   }
   &__power {
