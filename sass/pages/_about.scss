@@ -50,7 +50,7 @@
   &__img-small {
     height: 80%;
     background-size: cover;
-    background-image: url(./img/about/solarpanel.jpg);
+    background-image: url(../public/img/about/solarpanel.jpg);
     @include respond(br-500) {
       height: 100%;
       width: 100%;
