@@ -1,16 +1,26 @@
 .hb {
   &__container {
+    z-index: 10;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     gap: $space-2xs;
+    position: relative;
+
     &:hover .hb__line {
       background-color: $c-primary;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     }
   }
+
   &__line {
     display: inline-block;
+    &--close {
+      display: none;
+    }
+  }
+  &__line,
+  &__line--close {
     border-radius: $b-radius-xs;
     border-width: 1px;
     width: $space-xl;
@@ -18,5 +28,32 @@
     background-color: $c-white;
     transition: all 0.3s;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    transform-origin: center;
+  }
+  &__line.open {
+    display: none;
+  }
+  &__line ~ .hb__line--close {
+    position: absolute;
+    transform: rotate(0deg);
+  }
+
+  &__line.open ~ .hb__line--close {
+    right: 0;
+    display: inline-block;
+    transform-origin: center;
+    background-color: $c-primary;
+
+    @include respond(br-1000) {
+      background-color: $c-white;
+    }
+  }
+
+  // Weird? This is the upper line but nth = 2?
+  &__line.open ~ .hb__line--close:nth-last-of-type(2) {
+    transform: rotate(45deg);
+  }
+  &__line.open ~ .hb__line--close:nth-last-of-type(1) {
+    transform: rotate(-45deg);
   }
 }

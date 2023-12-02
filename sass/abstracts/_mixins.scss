@@ -1,0 +1,123 @@
+// @include respond(br-550) {
+//   font-size: 3rem;
+// }
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == br-320 {
+    @media (max-width: 20em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-400 {
+    @media (max-width: 25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-450 {
+    @media (max-width: 28.125em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-500 {
+    @media (max-width: 31.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-550 {
+    @media (max-width: 34.375em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-600 {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == br-700 {
+    @media (max-width: 43.75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-800 {
+    @media (max-width: 50em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-850 {
+    @media (max-width: 53.125em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-900 {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-950 {
+    @media (max-width: 59.375em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-1000 {
+    @media (max-width: 62.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-1100 {
+    @media (max-width: 68.75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-1200 {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-1300 {
+    @media (max-width: 81.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-1350 {
+    @media (max-width: 84.375em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-1400 {
+    @media (max-width: 87.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == br-1500 {
+    @media (max-width: 93.75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-1550 {
+    @media (max-width: 96.875em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-1600 {
+    @media (max-width: 100em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-1700 {
+    @media (max-width: 106.87em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-1800 {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == br-2350 {
+    @media (max-width: 146.87em) {
+      @content;
+    }
+  }
+}

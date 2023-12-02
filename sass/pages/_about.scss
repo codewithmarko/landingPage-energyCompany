@@ -4,16 +4,30 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 100svh;
+    @include respond(br-500) {
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content 1fr 1fr;
+      height: 100%;
+      margin-bottom: $space-3xl;
+    }
   }
   &__main {
     grid-column: 1 / 7;
     height: fit-content;
+    @include respond(br-500) {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
   }
   &__imgbox-big {
     grid-column: 10 / -1;
     grid-row: 1/3;
     border-left: 2px solid $c-primary;
     background-color: $c-primary;
+
+    @include respond(br-500) {
+      display: none;
+    }
   }
   &__imgbox-small {
     grid-row: 2/3;
@@ -21,6 +35,10 @@
     position: relative;
     display: flex;
     align-self: end;
+    @include respond(br-500) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
   }
 
   &__img-big {
@@ -33,6 +51,13 @@
     height: 80%;
     background-size: cover;
     background-image: url(./img/about/solarpanel.jpg);
+    @include respond(br-500) {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__progress {
@@ -41,8 +66,13 @@
     justify-content: center;
     width: 100%;
     grid-column: 6 / 10;
-    grid-row: 2/3;
-    // gap: $space-lg;
+    grid-row: 4/5;
+
+    @include respond(br-500) {
+      grid-column: 1 / -1;
+      grid-row: 2/3;
+      height: 14rem;
+    }
   }
 }
 
@@ -64,6 +94,16 @@
     box-shadow:
       0 20px 25px -5px rgba(0, 0, 0, 0.1),
       0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    @include respond(br-500) {
+      width: min-content;
+      padding-inline: $space-base;
+      padding-block: $space-md;
+      gap: $space-base;
+      transform: translate(0);
+      left: 0;
+      position: relative;
+    }
   }
   &__power {
     display: flex;
@@ -83,18 +123,32 @@
   stroke: $c-primary;
   stroke-width: 4px;
 
+  @include respond(br-500) {
+    width: $space-4xl;
+    height: $space-4xl;
+  }
+
   &__container {
     position: relative;
     display: inline-block;
 
     &:first-child {
       transform: translate(40%, 50%);
+      @include respond(br-500) {
+        transform: translate(0, 20%);
+      }
     }
     &:nth-child(2) {
       transform: translateY(-50%);
+      @include respond(br-500) {
+        transform: translate(0, -50%);
+      }
     }
     &:last-child {
       transform: translate(-40%, 50%);
+      @include respond(br-500) {
+        transform: translate(0, 20%);
+      }
     }
   }
   &__circle {

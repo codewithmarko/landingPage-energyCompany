@@ -36,6 +36,9 @@ p {
 .heading {
   color: $c-primary;
   width: fit-content;
+  @include respond(br-500) {
+    width: fit-content;
+  }
 
   &--white {
     color: $c-white;
@@ -66,6 +69,10 @@ p {
 
     &--future {
       letter-spacing: 1.4rem;
+
+      @include respond(br-500) {
+        letter-spacing: 1rem;
+      }
     }
   }
 
@@ -81,11 +88,15 @@ p {
     font-size: $fs-xl;
     text-transform: uppercase;
     text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.3);
+    @include respond(br-500) {
+      font-size: $fs-lg;
+    }
   }
 
   &--h2 {
     line-height: 0.85;
     margin-block-end: $space-base;
+    width: fit-content;
   }
 
   &--h3 {

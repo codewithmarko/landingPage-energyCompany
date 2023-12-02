@@ -1,17 +1,30 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   width: 100%;
   height: 100svh;
-  background: url(./img/hero.jpg) no-repeat center top;
+  background: url(./img/hero.jpg) no-repeat center center;
   background-size: cover;
+  background-repeat: no-repeat;
 
   &__main {
     display: flex;
     flex-direction: column;
     gap: $space-xl;
     padding-bottom: $space-4xl;
+    @include respond(br-500) {
+      padding-top: $space-4xl;
+
+      padding-bottom: 0;
+    }
   }
 
   &__sub {

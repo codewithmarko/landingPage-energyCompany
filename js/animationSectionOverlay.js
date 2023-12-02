@@ -19,12 +19,6 @@ const minFontSize = parseFloat(styleMinFontSize);
 const maxFontSize = 450;
 const textInitPosition = text.getBoundingClientRect();
 
-//!Bug muss bei Resize auch gelöst werden.
-//! Activate this for production
-// window.onbeforeunload = function () {
-//   window.scrollTo(0, 0);
-// };
-
 ScrollTrigger.create({
   trigger: '.textContainerStart',
   start: 'top top',

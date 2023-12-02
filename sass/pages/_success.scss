@@ -29,10 +29,14 @@
   &__grid {
     display: grid;
     grid-template-columns: min-content min-content;
-    transform: translateX(10%);
+    // transform: translateX(10%);
     grid-template-rows: 1fr 1fr;
     justify-items: end;
     gap: $space-5xl;
+
+    @include respond(br-500) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
@@ -48,17 +52,34 @@
   width: 30rem;
   background-color: $c-primary;
 
+  @include respond(br-500) {
+    width: 100%;
+  }
+
   &--solara {
     grid-column: 2 / 3;
+    @include respond(br-500) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
   }
   &--windstream {
     grid-column: 1/2;
     transform: translateY(50%);
     grid-row: 1 / 2;
+    @include respond(br-500) {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      transform: translate(0);
+    }
   }
   &--aquapure {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
+    @include respond(br-500) {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
   }
   &__img {
     height: 20rem;

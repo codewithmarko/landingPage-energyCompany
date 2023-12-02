@@ -1,5 +1,12 @@
 .container {
   padding: $space-2xl;
+
+  @include respond(br-1000) {
+    padding: $space-xl;
+  }
+  @include respond(br-500) {
+    padding: $space-md;
+  }
 }
 
 .uppercase {

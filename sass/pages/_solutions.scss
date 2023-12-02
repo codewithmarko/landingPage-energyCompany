@@ -5,6 +5,7 @@
   background-size: cover;
   position: sticky;
   top: 0;
+  z-index: -5;
 }
 
 .solutions__layer {
@@ -14,6 +15,10 @@
   background-image: url(./img/solutions/earth-layer.png);
   background-size: cover;
   z-index: 2;
+
+  @include respond(br-500) {
+    transform: translateY(-1%);
+  }
 }
 
 .layer__text {
@@ -21,6 +26,12 @@
   position: absolute;
   top: 27.5%;
   left: 50%;
+
+  @include respond(br-500) {
+    left: 35%;
+    top: 24.5%;
+    width: 2rem;
+  }
 
   & .heading:first-child {
     transform: translateX(-40%);
@@ -38,6 +49,10 @@
       0px 14px 10px rgba(0, 0, 0, 0.15),
       0px 24px 2px rgba(0, 0, 0, 0.1),
       0px 34px 30px rgba(0, 0, 0, 0.1);
+
+    @include respond(br-500) {
+      transform: translateX(-10%);
+    }
   }
 }
 
@@ -51,6 +66,10 @@
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 12rem;
 
+  @include respond(br-500) {
+    gap: 0;
+  }
+
   &__container {
     display: grid;
     height: 100svh;
@@ -61,6 +80,17 @@
     background-color: $c-white;
 
     top: 0;
+
+    @include respond(br-500) {
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content 20rem min-content min-content;
+      height: 100%;
+      position: relative;
+
+      &:not(:last-child) {
+        padding-bottom: 10rem;
+      }
+    }
   }
   &__head {
     display: flex;
@@ -68,10 +98,22 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: $space-lg;
+    @include respond(br-500) {
+      grid-column: 1/2;
+      grid-row: 1 /2;
+      flex-direction: column-reverse;
+      justify-content: start;
+      align-items: start;
+      gap: $space-lg;
+      margin-bottom: 0;
+    }
   }
   &__headingbox {
     width: 50%;
     line-height: 0.5;
+    @include respond(br-500) {
+      width: 100%;
+    }
   }
   &__dashline {
     display: block;
@@ -87,9 +129,6 @@
     display: flex;
     flex-direction: column;
     gap: $space-base;
-    // flex-wrap: wrap;
-    // gap: $space-md;
-    // border: 1px solid black;
     height: fit-content;
     padding: $space-lg;
     background-color: $c-gray;
@@ -98,6 +137,11 @@
       rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
       rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
       rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
+    @include respond(br-500) {
+      grid-column-start: 1;
+      grid-row: 4 /5;
+    }
   }
   &__sub {
     align-self: center;
@@ -105,10 +149,18 @@
     font-weight: 400;
     margin-bottom: $space-lg;
     width: 80%;
+    @include respond(br-500) {
+      grid-column-start: 1;
+      grid-row: 3 /4;
+    }
   }
   &__canvas-container {
     grid-column-start: 2;
     grid-row: span 2 / span 2;
+    @include respond(br-500) {
+      grid-column: 1/2;
+      grid-row: 2 /3;
+    }
   }
 
   &__canvas {
@@ -132,4 +184,12 @@
   width: 50%;
   height: 100%;
   right: 0;
+
+  @include respond(br-500) {
+    position: relative;
+    grid-column: 1/2;
+    grid-row: 2 /3;
+    width: 100%;
+    height: 100%;
+  }
 }

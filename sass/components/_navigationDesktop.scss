@@ -5,28 +5,72 @@
 }
 
 .navdesk {
-  // background-color: red;
   width: 100vw;
   height: 100svh;
-  // position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   display: flex;
+  overflow-x: hidden !important;
+
+  @include respond(br-1000) {
+    flex-direction: column;
+  }
+
+  &.show {
+    pointer-events: none;
+  }
 
   &__products {
-    flex-basis: 60%;
-    height: 100%;
+    transform: translateX(-200%);
+    // flex-basis: 60%;
+
+    flex: 1 1 60%;
+    // height: 100%;
     background-color: $c-primary;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: $space-lg;
+    transition: all 0.4s;
   }
   &__menu {
-    flex-basis: 40%;
-    height: 100%;
+    transform: translateX(200%);
+    transition: all 0.4s;
+
+    // flex-basis: 40%;
+    flex: 1 1 40%;
+    // height: 100%;
     background-color: $c-white;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: $space-lg;
+    @include respond(br-1400) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+    }
+    @include respond(br-1000) {
+      flex-direction: row;
+      gap: $space-3xl;
+      justify-content: start;
+    }
+    @include respond(br-500) {
+      // flex-direction: column;
+      justify-content: space-between;
+      gap: $space-xl;
+
+      justify-content: start;
+    }
   }
+  &__products.show,
+  &__menu.show {
+    transform: translateX(0);
+  }
+
   &__icon {
     stroke: $c-white;
     height: 3rem;
@@ -44,6 +88,24 @@
   justify-content: space-between;
   padding-block: $space-xs;
   padding-inline: $space-md;
+  @include respond(br-1400) {
+    flex-direction: row-reverse;
+    justify-content: start;
+    gap: $space-md;
+  }
+
+  @include respond(br-1000) {
+    font-size: $fs-xl;
+  }
+
+  @include respond(br-500) {
+    font-size: $fs-md;
+    width: fit-content;
+    padding-block: $space-3xs;
+    padding-inline: $space-xs;
+    gap: 0;
+    flex-direction: column-reverse;
+  }
 
   background-image: linear-gradient(
     90deg,
@@ -51,7 +113,7 @@
     transparent 50%,
     $c-white 50%
   );
-  background-size: 200%;
+  background-size: 300%;
 
   transition: all 0.3s;
 
@@ -64,5 +126,26 @@
   &:hover .navdesk__icon {
     fill: $c-primary;
     stroke: $c-primary;
+  }
+}
+
+.menu__box {
+  height: fit-content;
+}
+
+.menu__link {
+  transition: all 0.3s;
+  width: fit-content;
+  &:hover {
+    cursor: pointer;
+    color: $c-primary;
+    transform: translateX(5px);
+  }
+
+  &--heading {
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $c-primary;
+    margin-bottom: $space-xs;
   }
 }

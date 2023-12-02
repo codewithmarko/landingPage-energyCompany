@@ -16,6 +16,7 @@ EVERYTHING FOR ANIMATION
   height: 100vh;
   background-color: $c-primary;
   // display: none;
+  // visibility: hidden;
 }
 
 .textStart {
@@ -32,6 +33,10 @@ EVERYTHING FOR ANIMATION
   background-clip: text;
   background-size: cover;
   font-size: 450px;
+
+  @include respond(br-500) {
+    font-size: 130px;
+  }
 }
 
 .textContainerEnd {
@@ -44,6 +49,10 @@ EVERYTHING FOR ANIMATION
   height: fit-content;
   width: 100%;
 
+  @include respond(br-500) {
+    grid-template-columns: 1fr min-content;
+  }
+
   &__wrapper {
     position: sticky;
     top: 0;
@@ -52,8 +61,25 @@ EVERYTHING FOR ANIMATION
     padding-top: $space-6xl;
     padding-right: $space-2xl; //! same as container class
 
+    @include respond(br-500) {
+      width: 100%;
+      background-color: $c-white;
+      z-index: 7;
+      position: relative;
+    }
+
     &-inner {
       display: inline-block;
+      @include respond(br-500) {
+        grid-column: 1 / span 2;
+        width: min-content;
+        width: 100%;
+      }
+    }
+    @include respond(br-500) {
+      padding: 0;
+      background-color: $c-white;
+      display: block;
     }
   }
 }
@@ -66,6 +92,11 @@ EVERYTHING FOR ANIMATION
   width: fit-content;
   border-left: 2px solid $c-gray;
 
+  @include respond(br-500) {
+    border: none;
+    grid-column: 1/2;
+  }
+
   &__container {
     z-index: 5;
     margin-top: $space-6xl;
@@ -75,6 +106,11 @@ EVERYTHING FOR ANIMATION
     flex-shrink: 0;
     flex-grow: 0;
     padding-left: $space-3xl;
+    @include respond(br-500) {
+      width: 100%;
+      padding: 0;
+      margin-top: 0;
+    }
   }
 }
 
@@ -84,6 +120,10 @@ EVERYTHING FOR ANIMATION
   width: 80%;
   flex-direction: column;
   justify-content: center;
+
+  @include respond(br-500) {
+    width: 90%;
+  }
 
   &-text {
     margin-bottom: $space-xl;
@@ -113,6 +153,10 @@ EVERYTHING FOR ANIMATION
     flex-direction: column;
     align-content: center;
     gap: $space-xs;
+    @include respond(br-500) {
+      width: min-content;
+      justify-self: end;
+    }
   }
   &--block {
     display: inline-block;

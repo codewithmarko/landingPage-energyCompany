@@ -28,9 +28,9 @@
   </head>
   <body>
     <header>
-      <nav class="navdesk">
+      <nav class="navdesk show">
         <div class="navdesk__products container">
-          <a href="#solara" class="products__heading">
+          <a href="#solara" class="products__heading navCloser">
             Solara
             <span>
               <svg
@@ -105,7 +105,7 @@
                 /></svg
             ></span>
           </a>
-          <a href="#windstream" class="products__heading">
+          <a href="#windstream" class="products__heading navCloser">
             Windstream
             <span>
               <svg
@@ -133,7 +133,7 @@
                 /></svg
             ></span>
           </a>
-          <a href="#aquapure" class="products__heading">
+          <a href="#aquapure" class="products__heading navCloser">
             Aquapure
             <span>
               <svg
@@ -154,15 +154,40 @@
             ></span>
           </a>
         </div>
-        <div class="navdesk__menu container"></div>
+        <div class="navdesk__menu container">
+          <div class="menu__box">
+            <ul>
+              <li class="navCloser menu__link--heading">Discover us</li>
+              <li class="navCloser menu__link">About</li>
+              <li class="navCloser menu__link">Mission</li>
+              <li class="navCloser menu__link">Solutions</li>
+              <li class="navCloser menu__link">Stories</li>
+            </ul>
+          </div>
+          <div class="menu__box">
+            <ul>
+              <li class="navCloser menu__link--heading">Links</li>
+              <li class="navCloser menu__link">Legal</li>
+              <li class="navCloser menu__link">Contact Us</li>
+
+              <li class="navCloser menu__link">
+                <a href="#disclaimer"> Disclaimer </a>
+              </li>
+              <li class="menu__link">&nbsp;</li>
+            </ul>
+          </div>
+        </div>
       </nav>
-      <div class="container hero">
+      <div class="hero container">
         <div class="navbar">
           <p class="logo">NexaGreen X</p>
           <div class="hb__container">
             <span class="hb__line"></span>
             <span class="hb__line"></span>
             <span class="hb__line"></span>
+
+            <span class="hb__line--close"></span>
+            <span class="hb__line--close"></span>
           </div>
         </div>
         <div class="hero__main">
@@ -1146,7 +1171,7 @@
         </div>
       </div>
       <div class="footer__sub">
-        <p class="footer__disclaimer">
+        <p class="footer__disclaimer" id="disclaimer">
           This website is purely fictional and created for demonstration
           purposes only. All content, information, and any resemblance to real
           entities are entirely fictional and should not be considered factual.
@@ -1160,18 +1185,20 @@
             Created by:
             <a href="www.codewithmarko.com"> codewithmarko.com </a>
           </p>
-          <a href="https://github.com/codewithmarko" target="_blank">
-            <ion-icon name="logo-github" color="purple"></ion-icon>
-          </a>
-          <a href="https://www.instagram.com/codewithmarko/" target="_blank">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a>
-          <a href="https://www.tiktok.com/@codewithmarko" target="_blank">
-            <ion-icon name="logo-tiktok"></ion-icon>
-          </a>
-          <a href="https://twitter.com/codewithmarko" target="_blank">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
+          <div>
+            <a href="https://github.com/codewithmarko" target="_blank">
+              <ion-icon name="logo-github" color="purple"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com/codewithmarko/" target="_blank">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://www.tiktok.com/@codewithmarko" target="_blank">
+              <ion-icon name="logo-tiktok"></ion-icon>
+            </a>
+            <a href="https://twitter.com/codewithmarko" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
