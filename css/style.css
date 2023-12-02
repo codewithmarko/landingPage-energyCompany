@@ -644,7 +644,7 @@ header {
   justify-content: space-between;
   width: 100%;
   height: 100svh;
-  background: url(./img/hero.jpg) no-repeat center center;
+  background: url(./img/css-bg/hero.jpg) no-repeat center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -887,7 +887,7 @@ EVERYTHING FOR ANIMATION
 }
 
 .textStart {
-  background: url(./img/windTurbines.jpg);
+  background: url(./img/css-bg/windTurbines.jpg);
   background-size: cover;
   pointer-events: none;
   position: absolute;
