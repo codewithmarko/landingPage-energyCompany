@@ -8,7 +8,7 @@ Welcome to the landing page of a fictional energy company. The company distribut
 2. Windstream (wind energy)
 3. Aquapure (hydro energy)
 
-All product models and textures have been meticulously crafted uv unwrapper using Blender, ensuring seamless integration into three.js. In addition to the page's modern design, I have incorporated simple animations and water shaders to enhance the water simulation experience.
+All product models and textures have been crafted and uv unwrapped using Blender, ensuring seamless integration into three.js. In addition to the page's modern design, I have incorporated simple animations and water shaders to enhance the water simulation experience.
 
 
 The design is optimized for following screen sizes:
